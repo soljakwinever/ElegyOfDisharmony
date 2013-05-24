@@ -19,6 +19,8 @@ namespace EquestriEngine.SystemScreens
             _drawMethod,
             _updateMathod;
 
+        bool fadeBlack;
+
         float fadeAmount;
         bool finishedLoading;
 
@@ -29,10 +31,11 @@ namespace EquestriEngine.SystemScreens
             : base(true,false)
         {
             multiThreaded = false;
+            fadeBlack = false;
             _loadMethod = loadMethod;
             nextScreen = next;
         }
-
+        
         public LoadingScreen(Action loadMethod,
             Data.UI.Interfaces.IGameScreen next,
             TimedAction updateMethod, 
@@ -53,7 +56,10 @@ namespace EquestriEngine.SystemScreens
 
         public override void LoadContent()
         {
-            _background = EquestriEngine.AssetManager.GetTexture("{load}");
+            if (fadeBlack)
+                _background = EquestriEngine.AssetManager.CreatePixelTexture("{background}", Color.Black);
+            else
+                _background = EquestriEngine.AssetManager.GetTexture("{load}");
             base.LoadContent();
         }
 
@@ -75,11 +81,12 @@ namespace EquestriEngine.SystemScreens
                 {
                     _loadMethod.Invoke();
                     finishedLoading = true;
-                    System.Threading.Thread.Sleep(10000);
+                    EquestriEngine.AssetManager.FrameCapture = true;
                     _stateManager.AddScreen(nextScreen, true);
                 }
                 else
                 {
+
                     if (fadeAmount > 0)
                         fadeAmount -= dt;
                     else

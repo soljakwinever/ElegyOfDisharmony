@@ -302,7 +302,7 @@
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
-      <CompressContent>true</CompressContent>
+      <CompressContent>false</CompressContent>
       <RootDirectory>H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmonyContent\</RootDirectory>
       <LoggerRootDirectory>H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\</LoggerRootDirectory>
       <IntermediateDirectory>H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\</IntermediateDirectory>

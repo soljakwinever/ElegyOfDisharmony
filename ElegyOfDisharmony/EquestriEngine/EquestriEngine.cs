@@ -170,11 +170,20 @@ namespace EquestriEngine
         {
             base.UnloadContent();
         }
+        Microsoft.Xna.Framework.Input.KeyboardState ks, pks;
 
         protected override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 #if DEBUG
+            pks = ks;
+            ks = Microsoft.Xna.Framework.Input.Keyboard.GetState();
+
+            if (ks.IsKeyDown(Microsoft.Xna.Framework.Input.Keys.F3) && pks.IsKeyUp(Microsoft.Xna.Framework.Input.Keys.F3))
+            {
+                AssetManager.FrameCapture = true;
+            }
+
             if (_errorOccured)
             {
                 _debugConsole.Update(gameTime);
@@ -202,8 +211,16 @@ namespace EquestriEngine
 #endif
             }
             else
-
+            {
+                if (AssetManager.FrameCapture)
+                {
+                    AssetManager.CapturedFrame.BeginTarget();
+                    base.Draw(gameTime);
+                    AssetManager.CapturedFrame.EndTarget();
+                    AssetManager.FrameCapture = false;
+                }
                 base.Draw(gameTime);
+            }
         }
     }
 }

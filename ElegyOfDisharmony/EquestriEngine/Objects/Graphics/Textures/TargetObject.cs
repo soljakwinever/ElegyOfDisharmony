@@ -35,6 +35,22 @@ namespace EquestriEngine.Objects.Graphics
             }
         }
 
+        public bool InUse
+        {
+            get { return _inUse; }
+        }
+
+        public new Texture2D Texture
+        {
+            get 
+            { 
+                if(_inUse)
+                    return EquestriEngine.AssetManager.Empty.Texture;
+                 else
+                    return _texture; 
+            }
+        }
+
         public TargetObject(string name,GraphicsDevice device, int width, int height)
             :base(name)
         {

@@ -24,6 +24,16 @@ namespace EquestriEngine.Systems
         private EffectCollection _effects = null;
         private SkeletonCollection _skeletons = null;
 
+        private TargetObject _frameCapture;
+        private TextureObject _empty;
+        private PixelObject _singleWhite;
+        private bool _frameCaptured;
+
+        public TextureObject ErrorTexture
+        {
+            get { return _textures[MISSING_TEXTURE]; }
+        }
+
         public AssetQuality Quality = AssetQuality.High;
 
         private ElegyEngine.Content.ExclusiveContentManager _content;
@@ -37,6 +47,27 @@ namespace EquestriEngine.Systems
         public int ItemsLoaded
         {
             get { return _textures.Count + _fonts.Count; }
+        }
+
+        public bool FrameCapture
+        {
+            get { return _frameCaptured; }
+            set { _frameCaptured = value; }
+        }
+
+        public TargetObject CapturedFrame
+        {
+            get { return _frameCapture; }
+        }
+
+        public TextureObject Empty
+        {
+            get { return _empty; }
+        }
+
+        public PixelObject SingleWhite
+        {
+            get { return _singleWhite; }
         }
 
         public AssetManager(Game game)
@@ -53,6 +84,8 @@ namespace EquestriEngine.Systems
             _effectLoad = false;
             _fontLoad = false;
             _skeletonLoad = false;
+
+            _frameCaptured = false;
         }
         ~AssetManager()
         {
@@ -85,6 +118,10 @@ namespace EquestriEngine.Systems
                 _fonts["{smallfont}"] = smallFont;
                 var largeFont = new FontObject("{largefont}", @"fonts\celestia_redux_large");
                 _fonts["{largefont}"] = largeFont;
+
+                _frameCapture = new TargetObject("{screen}", GraphicsDevice, EquestriEngine.Settings.WindowWidth, EquestriEngine.Settings.WindowHeight);
+                _empty = CreatePixelTexture("{empty}", Color.Transparent);
+                _singleWhite = CreatePixelTexture("{single}");
             }
             catch (System.Exception ex)
             {
@@ -95,6 +132,12 @@ namespace EquestriEngine.Systems
             LoadFonts();
             LoadEffects();
             LoadSkeletons();
+        }
+
+        protected override void UnloadContent()
+        {
+            _frameCapture.UnloadAsset();
+            base.UnloadContent();
         }
 
         private void LoadTextures()

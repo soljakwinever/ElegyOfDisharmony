@@ -7,7 +7,7 @@ namespace EquestriEngine.SystemScreens
 {
     public class BattleScreen : GameScreen
     {
-        TextureObject pony1;
+        TargetObject pony1;
         BattleController _controller;
         
         TextureObject _battleStage;
@@ -21,6 +21,7 @@ namespace EquestriEngine.SystemScreens
 
         public override void Initialize()
         {
+
             base.Initialize();
         }
 
@@ -37,6 +38,7 @@ namespace EquestriEngine.SystemScreens
 
         public override void LoadContent()
         {
+            pony1 = EquestriEngine.AssetManager.CapturedFrame;
             Objects.Graphics.Misc.TextureLoadList list;
             Objects.Graphics.Misc.TextureLoadList.LoadList(out list, "debug_BattleScreen");
             EquestriEngine.AssetManager.LoadFromLoadList(list);
@@ -49,9 +51,20 @@ namespace EquestriEngine.SystemScreens
             _controller.Init();
         }
 
+        bool woosh;
+
         public override void Update(float dt)
         {
             _controller.Update(dt);
+            if (woosh)
+            {
+                scale += dt * 1.2f;
+                if (scale > 4)
+                {
+                    scale = 1;
+                    woosh = false;
+                }
+            }
         }
 
         public override void HandleInput(float dt)
@@ -63,16 +76,27 @@ namespace EquestriEngine.SystemScreens
                     _controller.SelectAction = false;
                 }
             }
+            if (ControlReference.Input2())
+            {
+                if (_controller.SelectAction)
+                {
+                    woosh = true;
+                }
+            }
             base.HandleInput(dt);
         }
 
         Vector2 pos = new Vector2(1024 / 2, 768 / 2);
+        float scale = 1.0f;
         public override void Draw(float dt)
         {
 
             SpriteBatch.Begin();
 
             SpriteBatch.Draw(_battleStage.Texture, EquestriEngine.ViewPort.Bounds, Color.White);
+            if(woosh)
+                for(int i = 0; i < 6; i++)
+                    SpriteBatch.Draw(pony1.Texture, new Vector2(1024/2,768/2),null, Color.Multiply(Color.White,(scale - 1) / (2)),scale / (i / 1.25f),new Vector2(1024/2,768/2),scale,0,0.0f);
 
             SpriteBatch.End();
         }
