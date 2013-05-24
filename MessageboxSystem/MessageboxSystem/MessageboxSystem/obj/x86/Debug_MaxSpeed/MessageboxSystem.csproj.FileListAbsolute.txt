@@ -1,0 +1,17 @@
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\Messagebox.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\fluttershy.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\twixie.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\park_mandydax.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\messagebox_n.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\messagebox_ud.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\DebugFont.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\MessageboxSystem.exe
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug_MaxSpeed\MessageboxSystem.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug_MaxSpeed\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug_MaxSpeed\MessageboxSystem.exe
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\NAudio\license.txt
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\NAudio\NAudio.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\NAudio\NAudio.WindowsMediaFormat.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\NAudio\NAudio.xml
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Debug_MaxSpeed\Content\Graphics\Character\Fluttershy\flutter.xnb

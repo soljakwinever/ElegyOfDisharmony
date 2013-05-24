@@ -1,0 +1,88 @@
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\ElegyGame.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\fluttershy.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\twixie.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\park_mandydax.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\messagebox_n.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\messagebox_ud.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Fonts\celestia_redux.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\Fluttershy\flutter.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Fonts\celestia_redux_large.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\DebugFont.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Fonts\Console.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\Fluttershy\fluttershy_body.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\Fluttershy\fluttershy_eyes.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\Fluttershy\fluttershy_eyes_back.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\Fluttershy\fluttershy_mane.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\1_floor.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Character\shadow.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\debug_room_floorboards.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\debug_room_wall.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Effects\AlphaMix.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\Messagebox.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\gradient_path.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Particles\cloud_puff.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Particles\cloud_swirl.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Particles\cloud_puff_a.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\screenshot_a.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\Debug\screenshot_a_alpha.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\logo.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\ElegyGame.exe
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\ElegyGame.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\EquestriEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\ElegyGame.exe
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\ElegyGame.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\MessageboxSystem.frmCheckForUpdates.resources
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Release\ElegyGame.csproj.GenerateResource.Cache
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Audio\Cupcakes.mp3
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Audio\Crusader.mp3
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Audio\ThorinairEverfreeForest.mp3
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\namebox.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\textbox_arrow.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\PreRenderedMaps\everfree_entrance.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Data\skeleton.json
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\menu_bubbles.xnb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\spine-csharp.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\spine-csharp.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Data\Atlases\logo.atlas
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\bin\x86\Release\Content\Graphics\UI\pop_text.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Audio\Cupcakes.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Audio\Crusader.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Audio\ThorinairEverfreeForest.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Data\Atlases\logo.atlas
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Data\skeleton.json
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\Messagebox.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\fluttershy.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\twixie.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\park_mandydax.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\messagebox_n.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\messagebox_ud.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Fonts\celestia_redux.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\Fluttershy\flutter.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Fonts\celestia_redux_large.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\Fluttershy\fluttershy_body.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\Fluttershy\fluttershy_eyes.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\Fluttershy\fluttershy_eyes_back.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\Fluttershy\fluttershy_mane.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\1_floor.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Character\shadow.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\debug_room_floorboards.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\debug_room_wall.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\gradient_path.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Particles\cloud_puff.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Particles\cloud_swirl.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Particles\cloud_puff_a.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\screenshot_a.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Debug\screenshot_a_alpha.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\logo.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\namebox.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\textbox_arrow.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\PreRenderedMaps\everfree_entrance.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\menu_bubbles.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\UI\pop_text.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\DebugFont.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Fonts\Console.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\Content\Graphics\Effects\AlphaMix.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Release\ElegyGame.exe
+H:\Users\Aaron\Desktop\ElegyEngine_Release\ElegyGame.pdb

@@ -1,0 +1,8 @@
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\bin\x86\Release\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\bin\x86\Release\EquestriEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\obj\x86\Release\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\obj\x86\Release\EquestriEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\obj\x86\Release\EquestriEngine.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\bin\x86\Release\spine-csharp.dll
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\EquestriEngine\bin\x86\Release\spine-csharp.pdb
