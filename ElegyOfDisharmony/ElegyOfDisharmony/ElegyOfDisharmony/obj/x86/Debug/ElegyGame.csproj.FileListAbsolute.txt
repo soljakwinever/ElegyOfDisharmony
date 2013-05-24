@@ -1,0 +1,53 @@
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyGame.exe
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyGame.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\ElegyGame.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\ElegyGame.exe
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\ElegyGame.pdb
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\MessageboxSystem.frmCheckForUpdates.resources
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\ElegyGame.csproj.GenerateResource.Cache
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\Audio\Cupcakes.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\Audio\Crusader.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\Audio\ThorinairEverfreeForest.mp3
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\Data\skeleton.json
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\Data\Atlases\logo.atlas
+H:\Users\Aaron\Documents\Visual Studio 2010\Projects\MessageboxSystem\MessageboxSystem\MessageboxSystem\obj\x86\Debug\MessageboxSystem.frmDownloadClient.resources
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\Messagebox.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\fluttershy.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\twixie.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\PreRenderedMaps\park_mandydax.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\messagebox_n.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\messagebox_ud.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Fonts\celestia_redux.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\Fluttershy\flutter.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Fonts\celestia_redux_large.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\Fluttershy\fluttershy_body.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\Fluttershy\fluttershy_eyes.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\Fluttershy\fluttershy_eyes_back.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\Fluttershy\fluttershy_mane.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\1_floor.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Character\shadow.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\debug_room_floorboards.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\debug_room_wall.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\gradient_path.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Particles\cloud_puff.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Particles\cloud_swirl.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Particles\cloud_puff_a.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\screenshot_a.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Debug\screenshot_a_alpha.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\logo.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\namebox.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\textbox_arrow.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\PreRenderedMaps\everfree_entrance.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\menu_bubbles.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\UI\pop_text.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\DebugFont.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Fonts\Console.xnb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\ElegyContent\Graphics\Effects\AlphaMix.xnb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\ElegyGame.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\MessageboxSystem.frmCheckForUpdates.resources
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\MessageboxSystem.frmDownloadClient.resources
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\ElegyGame.csproj.GenerateResource.Cache
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\ElegyGame.exe
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\ElegyOfDisharmony\obj\x86\Debug\ElegyGame.pdb
