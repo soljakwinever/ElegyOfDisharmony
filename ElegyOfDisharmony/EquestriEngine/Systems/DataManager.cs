@@ -153,7 +153,7 @@ namespace EquestriEngine.Systems
                 if (unlocked.Count > 0)
                     foreach (var achievement in unlocked)
                     {
-                        file.WriteLine(achievement.DataName, achievement.Unlocked);
+                        file.WriteLine(achievement.DataName + ";" + achievement.Unlocked);
                     }
 
                 file.WriteEndBlock();
