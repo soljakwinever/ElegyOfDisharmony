@@ -1,0 +1,31 @@
+1.0.0.0
+SavedGame
+{
+	PartyData
+	{
+		0
+	}
+	ItemData
+	{
+		0
+	}
+	VariableStates
+	{
+		4
+		{steps_taken};0
+		{profilename};Pinkie Pie
+		{gold};0
+		{lastdamage};0
+	}
+	SwitchStates
+	{
+		4
+		Achievement Test;True
+		Multi Switch Check Test;False
+		switch_easter_egg;False
+		switch_couple;False
+	}
+	AchievementData
+	{
+	}
+}

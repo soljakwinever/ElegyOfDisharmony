@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="ElegyOfDisharmony_Android_.ElegyOfDisharmony_Android_">
+  <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="8" />
+  <application android:name="mono.android.app.Application">
+    <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|orientation" android:icon="@drawable/icon" android:label="ElegyOfDisharmony(Android)" android:launchMode="singleInstance" android:screenOrientation="landscape" android:theme="@style/Theme.Splash" android:name="elegyofdisharmony_android_.Activity1" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="ElegyOfDisharmony_Android_.ElegyOfDisharmony_Android_.mono.MonoRuntimeProvider.__mono_init__" />
+    <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|orientation" android:icon="@drawable/icon" android:label="ElegyOfDisharmony(Android)" android:launchMode="singleInstance" android:screenOrientation="landscape" android:theme="@style/Mono.Android.Theme.Splash" android:name="elegyofdisharmony_android_.elegyofdisharmony_android_.TrialSplashScreen24647b30a5c54e6594f248f2952587ac" android:noHistory="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>

@@ -1,0 +1,19 @@
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\SDL.dll
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoElegyOfDisharmony.exe
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoElegyOfDisharmony.pdb
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\Lidgren.Network.dll
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoGame.Framework.dll
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\OpenTK.dll
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\Tao.Sdl.dll
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.csprojResolveAssemblyReference.cache
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.exe
+h:\users\aaron\documents\visual studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoElegyOfDisharmony.exe.config
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\spine-csharp.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Debug\spine-csharp.pdb
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyOfDisharmony.exe.config
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\SDL.dll
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyOfDisharmony.exe
+H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyOfDisharmony.pdb

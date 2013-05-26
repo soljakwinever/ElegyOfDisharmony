@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8B7A3A8-DAE2-4EA3-8E86-D1AC3F18B8F0}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EquestriEngine</RootNamespace>
+    <AssemblyName>EquestriEngine</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="MonoGame.Framework">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Android\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Achievement.cs" />
+    <Compile Include="Data\Collections\ActionList.cs" />
+    <Compile Include="Data\Collections\GameScreenCollection.cs" />
+    <Compile Include="Data\Collections\MethodParamCollection.cs" />
+    <Compile Include="Data\Collections\SwitchCollection.cs" />
+    <Compile Include="Data\Collections\VariableCollection.cs" />
+    <Compile Include="Data\Collections\WidgetList.cs" />
+    <Compile Include="Data\Controls\IControlScheme.cs" />
+    <Compile Include="Data\Exceptions\EngineException.cs" />
+    <Compile Include="Data\GameSettings.cs" />
+    <Compile Include="Data\Inputs\AudioInput.cs" />
+    <Compile Include="Data\Inputs\ConditionInput.cs" />
+    <Compile Include="Data\Inputs\DataInput.cs" />
+    <Compile Include="Data\Inputs\Interfaces\IEventInput.cs" />
+    <Compile Include="Data\Inputs\IntInput.cs" />
+    <Compile Include="Data\Inputs\IntModInput.cs" />
+    <Compile Include="Data\Inputs\MethodParamPair.cs" />
+    <Compile Include="Data\Inputs\StringInput.cs" />
+    <Compile Include="Data\Inputs\StringModInput.cs" />
+    <Compile Include="Data\Inputs\VariableModInput.cs" />
+    <Compile Include="Data\Interfaces\IDataEntry.cs" />
+    <Compile Include="Data\Scene\BoundingBox.cs" />
+    <Compile Include="Data\Scene\BoundingSphere.cs" />
+    <Compile Include="Data\Scene\Color.cs" />
+    <Compile Include="Data\Scene\Matrix.cs" />
+    <Compile Include="Data\Scene\MessageBox.cs" />
+    <Compile Include="Data\Scene\MoveToData.cs" />
+    <Compile Include="Data\Scene\MoveToList.cs" />
+    <Compile Include="Data\Scene\Quaterion.cs" />
+    <Compile Include="Data\Scene\Rectangle.cs" />
+    <Compile Include="Data\Scene\Vector2.cs" />
+    <Compile Include="Data\Scene\Vector3.cs" />
+    <Compile Include="Data\Switch.cs" />
+    <Compile Include="Data\SystemSkin.cs" />
+    <Compile Include="Data\UI\GameScreen.cs" />
+    <Compile Include="Data\UI\Interfaces\IGameScreen.cs" />
+    <Compile Include="Data\UI\Interfaces\IWidget.cs" />
+    <Compile Include="Data\UI\Widget.cs" />
+    <Compile Include="Data\Variable.cs" />
+    <Compile Include="EngineGlobals.cs" />
+    <Compile Include="EquestriEngine.cs" />
+    <Compile Include="GameData\Battle\ActionArgs.cs" />
+    <Compile Include="GameData\Battle\BattleController.cs" />
+    <Compile Include="GameData\Battle\BattleData.cs" />
+    <Compile Include="GameData\Battle\Enemy\MobData.cs" />
+    <Compile Include="GameData\Battle\Player\CharacterData.cs" />
+    <Compile Include="GameData\Collections\BattleDataCollection.cs" />
+    <Compile Include="GameData\Item\Equippable\Costume.cs" />
+    <Compile Include="GameData\Item\Equippable\Weapon.cs" />
+    <Compile Include="GameData\Item\ItemData.cs" />
+    <Compile Include="GameData\Skills\Skill.cs" />
+    <Compile Include="Helpers\FormattedFile.cs" />
+    <Compile Include="Objects\Content\ExclusiveContentManager.cs" />
+    <Compile Include="Objects\Graphics\Effects\BasicEffectObject.cs" />
+    <Compile Include="Objects\Graphics\Effects\EffectCollection.cs" />
+    <Compile Include="Objects\Graphics\Effects\EffectObject.cs" />
+    <Compile Include="Objects\Graphics\Effects\TextureAlphaEffect.cs" />
+    <Compile Include="Objects\Graphics\Fonts\FontCollection.cs" />
+    <Compile Include="Objects\Graphics\Fonts\FontObject.cs" />
+    <Compile Include="Objects\Graphics\Geometry\DrawableQuad.cs" />
+    <Compile Include="Objects\Graphics\Interfaces\IContentLoadableEffect.cs" />
+    <Compile Include="Objects\Graphics\Interfaces\IDrawableGeom.cs" />
+    <Compile Include="Objects\Graphics\Interfaces\IGraphicsLoadableEffect.cs" />
+    <Compile Include="Objects\Graphics\Interfaces\ILoadable.cs" />
+    <Compile Include="Objects\Graphics\Misc\TextureLoadList.cs" />
+    <Compile Include="Objects\Graphics\Skeletons\DrawableSkeleton.cs" />
+    <Compile Include="Objects\Graphics\Skeletons\SkeletonCollection.cs" />
+    <Compile Include="Objects\Graphics\TextureObjectFactory.cs" />
+    <Compile Include="Objects\Graphics\Textures\PixelObject.cs" />
+    <Compile Include="Objects\Graphics\Textures\TargetObject.cs" />
+    <Compile Include="Objects\Graphics\Textures\TextureAtlas.cs" />
+    <Compile Include="Objects\Graphics\Textures\TextureCollection.cs" />
+    <Compile Include="Objects\Graphics\Textures\TextureObject.cs" />
+    <Compile Include="Objects\Graphics\Effects\TwoTextureAlphaEffect.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemScreens\BattleScreen.cs" />
+    <Compile Include="SystemScreens\GameplayScreen.cs" />
+    <Compile Include="SystemScreens\LoadingScreen.cs" />
+    <Compile Include="SystemScreens\LogoScreen.cs" />
+    <Compile Include="SystemScreens\MenuScreen.cs" />
+    <Compile Include="SystemScreens\MessageBoxScreen.cs" />
+    <Compile Include="SystemScreens\SetupScreen.cs" />
+    <Compile Include="Systems\AssetManager.cs" />
+    <Compile Include="Systems\BaseDrawableSystem.cs" />
+    <Compile Include="Systems\BaseSystem.cs" />
+    <Compile Include="Systems\ConsoleWindow.cs" />
+    <Compile Include="Systems\DataManager.cs" />
+    <Compile Include="Systems\InputManager.cs" />
+    <Compile Include="Systems\StateManager.cs" />
+    <Compile Include="Systems\WidgetDrawer.cs" />
+    <Compile Include="SystemWidgets\AchievementDisplay.cs" />
+    <Compile Include="SystemWidgets\GoldDisplay.cs" />
+    <Compile Include="SystemWidgets\NameInputWidget.cs" />
+    <Compile Include="SystemWidgets\PopTextWidget.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GameData\Item\Usable\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

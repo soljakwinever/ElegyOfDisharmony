@@ -1,0 +1,13 @@
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\EquestriEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\EquestriEngine.dll.mdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\EquestriEngine.EquestriEngine.apk
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\EquestriEngine.EquestriEngine-Signed.apk
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\MonoGame.Framework.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\bin\Debug\Lidgren.Network.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\EquestriEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\EquestriEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\android\bin\EquestriEngine.EquestriEngine.apk
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\res\values\strings.xml
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\R.cs.flag
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\AndroidElegyEngine\obj\Debug\uploadflags.txt

@@ -1,0 +1,13 @@
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\ElegyOfDisharmony(Android).dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\ElegyOfDisharmony(Android).pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\MonoGame.Framework.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\spine-csharp.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\Lidgren.Network.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Debug\spine-csharp.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\obj\Debug\ElegyOfDisharmony(Android).csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\obj\Debug\ElegyOfDisharmony(Android).dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\obj\Debug\ElegyOfDisharmony(Android).pdb
+H:\Users\Aaron\Desktop\Elegy_Of_disharmony\Android\ElegyOfDisharmony(Android).dll
+H:\Users\Aaron\Desktop\Elegy_Of_disharmony\Android\ElegyOfDisharmony(Android).pdb

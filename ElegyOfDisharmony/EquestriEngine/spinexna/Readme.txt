@@ -1,1 +1,0 @@
-﻿Source for SPINE Runtime XNA is copyright to Esoteric Software

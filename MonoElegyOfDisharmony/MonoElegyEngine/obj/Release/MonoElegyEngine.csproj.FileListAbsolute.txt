@@ -1,0 +1,11 @@
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\MonoGame.Framework.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\spine-csharp.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\OpenTK.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\Lidgren.Network.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\Tao.Sdl.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Release\spine-csharp.pdb
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\obj\Release\MonoElegyEngine.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\obj\Release\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\obj\Release\MonoElegyEngine.pdb

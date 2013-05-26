@@ -1,0 +1,11 @@
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Release\ElegyOfDisharmony(Android).dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Release\MonoGame.Framework.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\mscorlib.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\Mono.Security.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v2.2\Mono.Android.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Core.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.dll
+H:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v2.2\OpenTK.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Release\Lidgren.Network.dll
+H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\ElegyOfDisharmony(Android)\bin\Release\EquestriEngine.dll
