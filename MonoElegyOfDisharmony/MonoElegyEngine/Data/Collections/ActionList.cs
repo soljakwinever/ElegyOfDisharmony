@@ -75,7 +75,7 @@ namespace EquestriEngine.Data.Collections
 
         public void AddMethod(MethodParamResult inMethod,Data.Inputs.Interfaces.IEventInput input)
         {
-            MethodParamPair pair = new MethodParamPair(inMethod, input);
+            MethodParamPair pair = new MethodParamPair(inMethod, input,0);
             _methods.AddLast(pair);
             if (_current == null)
                 _current = _methods.First;

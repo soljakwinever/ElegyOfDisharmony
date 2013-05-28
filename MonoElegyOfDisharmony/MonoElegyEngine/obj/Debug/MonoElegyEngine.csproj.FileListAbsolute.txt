@@ -11,3 +11,14 @@ H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoE
 H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\spine-csharp.pdb
 H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyEngine.dll
 H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\obj\Debug\MonoElegyEngine.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\obj\Debug\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\MonoGame.Framework.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\spine-csharp.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\OpenTK.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\Lidgren.Network.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\Tao.Sdl.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\spine-csharp.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\obj\Debug\MonoElegyEngine.pdb

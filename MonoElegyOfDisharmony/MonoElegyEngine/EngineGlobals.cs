@@ -1,6 +1,7 @@
 ﻿using EquestriEngine.Data;
 using EquestriEngine.Data.Inputs.Interfaces;
 using EquestriEngine.Data.Inputs;
+using EquestriEngine.Data.Collections;
 //using EquestriEngine.Objects.Nodes;
 using EquestriEngine.Systems;
 using Helper = Microsoft.Xna.Framework.MathHelper;
@@ -260,7 +261,7 @@ namespace EquestriEngine
                             MethodParamResult method = AdjustGold;
                             IntInput parameter = new IntInput();
                             parameter.Input = int.Parse(temp[1]);
-                            output = new MethodParamPair(method, parameter);
+                            //output = new MethodParamPair(method, parameter);
                         }
                         catch
                         {
@@ -273,7 +274,7 @@ namespace EquestriEngine
                         MethodParamResult method = AdjustGold;
                         IntInput parameter = new IntInput();
                         parameter.Input = int.Parse(temp[1]);
-                        output = new MethodParamPair(method, parameter);
+                        //output = new MethodParamPair(method, parameter);
                         break;
                     }
                 case "toggleswitch":
@@ -283,7 +284,7 @@ namespace EquestriEngine
                         MethodParamResult method = ToggleSwitch;
                         StringInput parameter = new StringInput();
                         parameter.Input = temp[1];
-                        output = new MethodParamPair(method, parameter);
+                        //output = new MethodParamPair(method, parameter);
                         break;
                     }
                 case "activateswitch":
@@ -303,6 +304,17 @@ namespace EquestriEngine
                     throw new Data.Exceptions.EngineException("Method name Not Found", false);
             }
             return output;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="file">An already open formatted file</param>
+        /// <returns></returns>
+        public static MethodParamCollection ReadScript(Utilities.FormattedFile file)
+        {
+            return null;
         }
 
         #endregion

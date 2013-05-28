@@ -1,0 +1,6 @@
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\bin\Debug\ScriptCompiler.exe.config
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\obj\Debug\ScriptCompiler.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\bin\Debug\ScriptCompiler.exe
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\bin\Debug\ScriptCompiler.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\obj\Debug\ScriptCompiler.exe
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\ScriptCompiler\obj\Debug\ScriptCompiler.pdb

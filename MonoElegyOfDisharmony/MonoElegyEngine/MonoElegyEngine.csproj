@@ -102,6 +102,11 @@
     <Compile Include="GameData\Skills\Skill.cs" />
     <Compile Include="Helpers\FormattedFile.cs" />
     <Compile Include="Helpers\KeyGrabber.cs" />
+    <Compile Include="MenuData\Inputs\Interfaces\IMouseSelectable.cs" />
+    <Compile Include="MenuData\Inputs\SelectableObject.cs" />
+    <Compile Include="MenuData\Inputs\SelectItemArgs.cs" />
+    <Compile Include="MenuData\MenuObject.cs" />
+    <Compile Include="MenuData\Static\Label.cs" />
     <Compile Include="Objects\Content\ExclusiveContentManager.cs" />
     <Compile Include="Objects\Graphics\Effects\BasicEffectObject.cs" />
     <Compile Include="Objects\Graphics\Effects\EffectCollection.cs" />
@@ -130,6 +135,8 @@
     <Compile Include="Spine-Runtime\Util.cs" />
     <Compile Include="Spine-Runtime\XnaTextureLoader.cs" />
     <Compile Include="SystemScreens\BattleScreen.cs" />
+    <Compile Include="SystemScreens\TitleScreen.cs" />
+    <Compile Include="SystemScreens\GameOverScreen.cs" />
     <Compile Include="SystemScreens\GameplayScreen.cs" />
     <Compile Include="SystemScreens\LoadingScreen.cs" />
     <Compile Include="SystemScreens\LogoScreen.cs" />

@@ -1,13 +1,19 @@
 ﻿using EquestriEngine.Data.UI;
+using System.Collections.Generic;
+using EquestriEngine.MenuData;
 
 namespace EquestriEngine.SystemScreens
 {
     public class MenuScreen : GameScreen
     {
+        List<MenuObject> _controls;
+
+        List<MenuData.Inputs.SelectableObject> _selectableObjects;
+
         public MenuScreen()
             :base(true,true)
         {
-
+            _controls = new List<MenuObject>();
         }
 
         public override void Initialize()
@@ -22,7 +28,10 @@ namespace EquestriEngine.SystemScreens
 
         public override void Update(float dt)
         {
-            throw new System.NotImplementedException();
+            foreach (var c in _controls)
+            {
+                c.Update(dt);
+            }
         }
 
         public override void HandleInput(float dt)
@@ -32,7 +41,24 @@ namespace EquestriEngine.SystemScreens
 
         public override void Draw(float dt)
         {
-            throw new System.NotImplementedException();
+            foreach (var c in _controls)
+            {
+                c.Update(dt);
+            }
+        }
+
+        protected void AddControl(MenuObject control)
+        {
+            if (control is MenuData.Inputs.SelectableObject)
+            {
+                _selectableObjects.Add((MenuData.Inputs.SelectableObject)control);
+            }
+            if (!control.Ready)
+            {
+                control.Init();
+                control.LoadContent();
+            }
+            _controls.Add(control);
         }
     }
 }

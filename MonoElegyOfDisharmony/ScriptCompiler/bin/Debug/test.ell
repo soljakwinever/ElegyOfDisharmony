@@ -1,0 +1,33 @@
+1.0.0.0
+ElegyScript
+{
+	6
+	ShowMessageBox
+	{
+		2
+		Hello
+		You are a fish
+	}
+	SetVariable
+	{
+		{blah}
+		0
+	}
+	SetSwitch
+	{
+		{butts}
+		On
+	}
+	ToggleSwitch
+	{
+		{butts}
+	}
+	AddGold
+	{
+		-42
+	}
+	Wait
+	{
+		5
+	}
+}
