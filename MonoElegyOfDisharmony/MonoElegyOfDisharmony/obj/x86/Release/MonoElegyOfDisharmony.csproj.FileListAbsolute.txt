@@ -13,3 +13,18 @@ H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoE
 H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.csprojResolveAssemblyReference.cache
 H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.exe
 H:\Users\Aaron\Documents\Visual Studio 2012\Projects\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoElegyOfDisharmony.exe.config
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.exe
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\SDL.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoElegyOfDisharmony.exe
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoElegyOfDisharmony.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\Lidgren.Network.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoElegyEngine.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoGame.Framework.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\OpenTK.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\Tao.Sdl.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\spine-csharp.dll
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\MonoElegyEngine.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\bin\WindowsGL\Release\spine-csharp.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Release\MonoElegyOfDisharmony.csprojResolveAssemblyReference.cache

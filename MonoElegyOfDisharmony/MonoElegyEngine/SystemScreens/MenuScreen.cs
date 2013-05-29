@@ -4,14 +4,14 @@ using EquestriEngine.MenuData;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class MenuScreen : GameScreen
+    public class MenuScreen : DrawableGameScreen
     {
         List<MenuObject> _controls;
 
         List<MenuData.Inputs.SelectableObject> _selectableObjects;
 
         public MenuScreen()
-            :base(true,true)
+            :base(true)
         {
             _controls = new List<MenuObject>();
         }
@@ -23,7 +23,12 @@ namespace EquestriEngine.SystemScreens
 
         public override void LoadContent()
         {
-            base.LoadContent();
+
+        }
+
+        public override void UnloadContent()
+        {
+            throw new System.NotImplementedException();
         }
 
         public override void Update(float dt)

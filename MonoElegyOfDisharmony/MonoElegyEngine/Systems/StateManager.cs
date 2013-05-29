@@ -1,5 +1,6 @@
 ﻿using EquestriEngine.Data.Collections;
 using EquestriEngine.Data.UI.Interfaces;
+using System.Linq;
 
 namespace EquestriEngine.Systems
 {
@@ -17,7 +18,7 @@ namespace EquestriEngine.Systems
         }
         ~StateManager()
         {
-            foreach (var screen in _gameScreens)
+            foreach (IDrawable screen in _gameScreens)
             {
                 screen.UnloadContent();
             }
@@ -35,7 +36,7 @@ namespace EquestriEngine.Systems
 
         protected override void LoadContent()
         {
-            foreach (var screen in _gameScreens)
+            foreach (IDrawable screen in _gameScreens)
             {
                 screen.LoadContent();
             }
@@ -45,25 +46,21 @@ namespace EquestriEngine.Systems
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
+            float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
             if (_gameScreens.Count > 0)
             {
-                var screen = _gameScreens.First;
-                do
+                var array = _gameScreens.ToArray();
+                foreach (var screen in array)
                 {
-                    if (!screen.Value.IsCovered)
-                        updateThisFrame.Add(screen.Value);
-                    screen = screen.Next;
-                } while (screen != null);
-
-                float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-                for (int i = 0; i < updateThisFrame.Count; i++)
-                {
-                    var temp = updateThisFrame[i];
-                    temp.Update(dt);
-                    if (temp.HasFocus)
-                        temp.HandleInput(dt);
+                    screen.Update(dt);
+                    if (screen is IInputReciever)
+                    {
+                        var iScreen = screen as IInputReciever;
+                        if (iScreen.HasFocus)
+                            iScreen.HandleInput(dt);
+                    }
                 }
-                updateThisFrame.Clear();
             }
 
             base.Update(gameTime);
@@ -72,7 +69,8 @@ namespace EquestriEngine.Systems
         public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            foreach (var screen in _gameScreens)
+            var array = _gameScreens.ToArray();
+            foreach (IDrawable screen in array)
             {
                 if (!screen.IsCovered)
                     screen.Draw(dt);
@@ -82,105 +80,81 @@ namespace EquestriEngine.Systems
             base.Draw(gameTime);
         }
 
-        public void AddScreenLoad(Data.UI.Interfaces.IGameScreen screen)
+        public void AddScreenLoad(Data.UI.DrawableGameScreen screen)
         {
-            if (!_ready)
-            {
-                throw new Data.Exceptions.EngineException("System not ready", true);
-            }
-            screen.StateManager = this;
-            var loadingScreen = new SystemScreens.LoadingScreen(screen.LoadContent, screen);
-            AddScreen(loadingScreen, false);
+            var loadScreen = new SystemScreens.LoadingScreen(screen.LoadContent, screen);
+            loadScreen.LoadContent();
+            AddScreen(loadScreen, true);
         }
 
         public void AddScreen(Data.UI.Interfaces.IGameScreen screen, bool loaded = false)
         {
             screen.StateManager = this;
-            if (_ready && !loaded)
+            if (screen is IDrawable)
             {
-                screen.Initialize();
-                screen.LoadContent();
-            }
-            if (screen.GetsInput)
-            {
-                screen.HasFocus = true;
-                InputManager.RegisterScreen(screen);
-                if (_gameScreens.Count > 0)
+                var dScreen = screen as IDrawable;
+                if (!loaded)
+                    dScreen.LoadContent();
+                if (dScreen.CoversOthers)
                 {
-                    var oldScreen = _gameScreens.First;
-                    do
+                    foreach (IDrawable oScreen in _gameScreens)
                     {
-                        oldScreen.Value.HasFocus = false;
-                        oldScreen = oldScreen.Next;
-                    } while (oldScreen != null);
+                        oScreen.IsCovered = true;
+                        oScreen.OnTop = false;
+                    }
+                    dScreen.OnTop = true;
+                    dScreen.IsCovered = false;
                 }
             }
-            if (screen.CoversOthers)
+            if (screen is IInputReciever)
             {
-                screen.HasFocus = true;
-                if (_gameScreens.Count > 0)
+                var iScreen = screen as IInputReciever;
+                var inputScreens = from s in _gameScreens where s is IInputReciever select s;
+                foreach (IInputReciever oScreen in inputScreens)
                 {
-                    var oldScreen = _gameScreens.First;
-                    do
-                    {
-                        oldScreen.Value.IsCovered = true;
-                        oldScreen = oldScreen.Next;
-                    } while (oldScreen != null);
+                    oScreen.HasFocus = false;
                 }
-                _gameScreens.AddLast(screen);
+                InputManager.RegisterScreen(iScreen);
+                iScreen.HasFocus = true;
             }
-            else
-                _gameScreens.AddBefore(_gameScreens.Last,screen);
 
+            screen.Initialize();
+            if (_gameScreens.Count > 0 && _gameScreens.Last.Value is SystemScreens.LoadingScreen)
+                _gameScreens.AddBefore(_gameScreens.Last, screen);
+            else
+                _gameScreens.AddLast(screen);
         }
 
         public void RemoveScreen(Data.UI.Interfaces.IGameScreen screen)
         {
-            screen.UnloadContent();
             _gameScreens.Remove(screen);
-            if (_gameScreens.Count > 1)
+            if (screen is IDrawable)
             {
-                if (screen.CoversOthers)
+                var dScreen = screen as IDrawable;
+                dScreen.UnloadContent();
+                if (dScreen.CoversOthers)
                 {
-                    var oldScreen = _gameScreens.Last;
-                    if (_gameScreens.Count > 1)
+                    foreach (IDrawable oScreen in _gameScreens)
                     {
-                        do
-                        {
-                            if (oldScreen.Value.CoversOthers)
-                            {
-                                oldScreen.Value.IsCovered = false;
-                                break;
-                            }
-                            oldScreen = oldScreen.Previous;
-                        } while (oldScreen.Previous != null);
+                        oScreen.IsCovered = false;
+                        oScreen.OnTop = false;
                     }
-
-                }
-                if (screen.HasFocus)
-                {
-                    var oldScreen = _gameScreens.Last;
-                    do
+                    if (_gameScreens.Last.Value is IDrawable)
                     {
-                        if (oldScreen.Value.GetsInput)
-                        {
-                            oldScreen.Value.HasFocus = true;
-                            break;
-
-                        }
-                        oldScreen = oldScreen.Previous;
-                    } while (oldScreen.Previous != null);
-
+                        (_gameScreens.Last.Value as IDrawable).OnTop = true;
+                    }
                 }
             }
-            else
+            if (screen is IInputReciever)
             {
-                var temp = _gameScreens.First;
-                temp.Value.IsCovered = false;
-                if (temp.Value.GetsInput)
-                    temp.Value.HasFocus = true;
+                if (_gameScreens.Count > 0)
+                {
+                    if (_gameScreens.Last.Value is IInputReciever)
+                    {
+                        (_gameScreens.Last.Value as IInputReciever).HasFocus = true;
+                    }
+                }
             }
-
         }
     }
 }

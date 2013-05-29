@@ -9,7 +9,7 @@ using TimedAction = System.Action<float>;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class LoadingScreen : GameScreen
+    public class LoadingScreen : DrawableGameScreen
     {
         private bool multiThreaded;
         static TextureObject _background;
@@ -28,7 +28,7 @@ namespace EquestriEngine.SystemScreens
 
         public LoadingScreen(Action loadMethod, 
             Data.UI.Interfaces.IGameScreen next)
-            : base(true,false)
+            :base(true)
         {
             multiThreaded = false;
             fadeBlack = false;
@@ -40,7 +40,7 @@ namespace EquestriEngine.SystemScreens
             Data.UI.Interfaces.IGameScreen next,
             TimedAction updateMethod, 
             TimedAction drawMethod)
-            : base(true, false)
+            :base(true)
         {
             multiThreaded = true;
             nextScreen = next;
@@ -60,13 +60,19 @@ namespace EquestriEngine.SystemScreens
                 _background = EquestriEngine.AssetManager.CreatePixelTexture("{background}", Color.Black);
             else
                 _background = EquestriEngine.AssetManager.GetTexture("{load}");
-            base.LoadContent();
+            _loadMethod.BeginInvoke(new System.AsyncCallback(FinishedLoading), null);
+        }
+
+        private void FinishedLoading(System.IAsyncResult result)
+        {
+            _loadMethod.EndInvoke(result);
+            finishedLoading = true;
+            _stateManager.AddScreen(nextScreen, true);
         }
 
         public override void UnloadContent()
         {
             _background.UnloadAsset();
-            base.UnloadContent();
         }
 
         public override void Update(float dt)
@@ -77,16 +83,8 @@ namespace EquestriEngine.SystemScreens
             {
                 if (fadeAmount < 1 && !finishedLoading)
                     fadeAmount += dt;
-                else if (!finishedLoading)
+                else if(finishedLoading)
                 {
-                    _loadMethod.Invoke();
-                    finishedLoading = true;
-                    EquestriEngine.AssetManager.FrameCapture = true;
-                    _stateManager.AddScreen(nextScreen, true);
-                }
-                else
-                {
-
                     if (fadeAmount > 0)
                         fadeAmount -= dt;
                     else

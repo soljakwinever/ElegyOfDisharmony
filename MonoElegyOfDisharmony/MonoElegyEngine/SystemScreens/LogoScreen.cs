@@ -3,7 +3,7 @@ using EquestriEngine.Objects.Graphics;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class LogoScreen : Data.UI.GameScreen
+    public class LogoScreen : Data.UI.DrawableGameScreen
     {
         private const float screen_on_time = 6.0f;
 
@@ -15,10 +15,10 @@ namespace EquestriEngine.SystemScreens
 
         Vector2 logoPos, logoOrigin;
 
-        Data.UI.GameScreen nextScreen;
+        Data.UI.DrawableGameScreen nextScreen;
 
-        public LogoScreen(TextureObject logo, Data.UI.GameScreen next = null)
-            :base(true,false)
+        public LogoScreen(TextureObject logo, Data.UI.DrawableGameScreen next)
+            :base(true)
         {
             EquestriEngine.ClearColor = Color.Black;
             _logoColor = Color.Black;
@@ -34,13 +34,11 @@ namespace EquestriEngine.SystemScreens
 
         public override void LoadContent()
         {
-            base.LoadContent();
         }
 
         public override void UnloadContent()
         {
             _logo.UnloadAsset();
-            base.UnloadContent();
         }
 
         public override void Update(float dt)

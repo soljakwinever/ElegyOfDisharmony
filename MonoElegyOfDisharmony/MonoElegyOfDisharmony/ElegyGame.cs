@@ -9,12 +9,12 @@ namespace MonoElegyOfDisharmony
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class CutSceneGame : EquestriEngine.EquestriEngine
+    public class ElegyGame : EquestriEngine.EquestriEngine
     {
         //Screens.ParticleTestImageScreen _Screen;
         EquestriEngine.SystemScreens.BattleScreen _Screen;
 
-        public CutSceneGame()
+        public ElegyGame()
             :base("Elegy Of Disharmony")
         {
         }

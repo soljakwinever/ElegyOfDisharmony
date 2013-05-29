@@ -85,7 +85,7 @@ namespace EquestriEngine.SystemWidgets
             }
             _starRotation += dt * 5;
             _velocity.Y += 0.25f;
-            Position += _velocity * dt;
+            Position += _velocity;
         }
 
         public override void Draw(Equestribatch sb)

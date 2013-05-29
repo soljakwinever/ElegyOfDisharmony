@@ -10,6 +10,14 @@ namespace EquestriEngine.MenuData.Inputs
 
     public class SelectableObject : MenuObject
     {
+        public override void Update(float dt)
+        {
+            throw new NotImplementedException();
+        }
 
+        public override void Draw(float dt)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

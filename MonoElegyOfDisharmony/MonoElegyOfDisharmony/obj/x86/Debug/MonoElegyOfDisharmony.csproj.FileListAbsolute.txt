@@ -19,3 +19,4 @@ H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyOfDisharmony.exe
 H:\Users\Aaron\Desktop\ElegyEngine_Debug\MonoElegyOfDisharmony.pdb
 H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.exe
 H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.pdb
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyOfDisharmony\obj\x86\Debug\MonoElegyOfDisharmony.csprojResolveAssemblyReference.cache

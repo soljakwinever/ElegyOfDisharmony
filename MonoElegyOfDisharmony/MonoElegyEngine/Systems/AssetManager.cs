@@ -349,6 +349,7 @@ namespace EquestriEngine.Systems
             {
                 TextureObject newTexture = new TextureObject(name, file);
                 _textures[name] = newTexture;
+                _textureLoad = true;
                 return newTexture;
             }
             else

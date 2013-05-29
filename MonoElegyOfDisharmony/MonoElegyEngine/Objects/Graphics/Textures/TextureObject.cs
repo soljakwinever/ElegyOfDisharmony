@@ -48,7 +48,7 @@ namespace EquestriEngine.Objects.Graphics
                     return _texture;
                 }
                 else
-                    throw new Data.Exceptions.EngineException("Texture not loaded", false);
+                    return EquestriEngine.AssetManager.ErrorTexture.Texture;
             }
         }
 

@@ -1,22 +1,38 @@
 ﻿using EquestriEngine.Data.Scenes;
 using EquestriEngine.Data.UI;
+using EquestriEngine.Data.Inputs;
 using EquestriEngine.Objects.Graphics;
 using EquestriEngine.GameData.Battle;
+using EquestriEngine.Data.Collections;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class BattleScreen : GameScreen
+    public class BattleScreen : DrawableGameScreen, Data.UI.Interfaces.IInputReciever
     {
         TargetObject pony1;
         BattleController _controller;
 
         TextureObject _battleStage;
 
+        MethodParamCollection methodList;
+
+        public bool HasFocus
+        {
+            get;
+            set;
+        }
+
+        MethodParamPair method;
+
         public BattleScreen()
-            : base(false, true)
+            : base(false)
         {
             _controller = new BattleController();
             _controller.OnActionPerform += _controller_OnActionPerform;
+
+            methodList = new MethodParamCollection();
+            methodList.AddMethod(new MethodParamPair(EngineGlobals.ShowMessageBox, new Data.Inputs.StringInput() { Input = "Rawr I'm a pony " }, 1));
+            methodList.AddMethod(new MethodParamPair(EngineGlobals.ShowMessageBox, new Data.Inputs.StringInput() { Input = "But I hate wednesday...\nI want to eat a female" }, -1));
         }
 
         public override void Initialize()
@@ -47,8 +63,12 @@ namespace EquestriEngine.SystemScreens
             _battleStage = EquestriEngine.AssetManager.GetTexture("{debug_stage}");
 #endif
 
-            base.LoadContent();
             _controller.Init();
+        }
+
+        public override void UnloadContent()
+        {
+
         }
 
         bool woosh;
@@ -79,6 +99,10 @@ namespace EquestriEngine.SystemScreens
             if (ControlReference.Input2())
             {
                 woosh = true;
+            }
+            if (ControlReference.Input3())
+            {
+                methodList.ExecuteFromStart(null);
             }
             base.HandleInput(dt);
         }

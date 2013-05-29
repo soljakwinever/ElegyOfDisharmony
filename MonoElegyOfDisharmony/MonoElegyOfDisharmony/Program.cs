@@ -18,7 +18,7 @@ namespace MonoElegyOfDisharmony
         [STAThread]
         static void Main()
         {
-            using (var game = new CutSceneGame())
+            using (var game = new ElegyGame())
                 game.Run();
         }
     }

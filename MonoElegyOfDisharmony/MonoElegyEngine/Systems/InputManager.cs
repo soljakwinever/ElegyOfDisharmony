@@ -64,7 +64,7 @@ namespace EquestriEngine.Systems
             player.RegisterControlReference(_controls);
         }*/
 
-        public static void RegisterScreen(Data.UI.Interfaces.IGameScreen screen)
+        public static void RegisterScreen(Data.UI.Interfaces.IInputReciever screen)
         {
             screen.ControlReference = _controls;
         }

@@ -3,7 +3,7 @@ using EquestriEngine.Objects.Graphics;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class SetupScreen : GameScreen
+    public class SetupScreen : DrawableGameScreen
     {
         private GameScreen nextScreen;
 
@@ -14,7 +14,7 @@ namespace EquestriEngine.SystemScreens
         private TargetObject backgroundImage;
 
         public SetupScreen()
-            : base(true, true)
+            : base(true)
         {
 
         }
@@ -28,12 +28,11 @@ namespace EquestriEngine.SystemScreens
         {
             _bubbles = new TextureObject("{bubz}", @"Graphics\UI\menu_bubbles");
             _pixel = new TextureObject("{bubz}", @"Graphics\UI\menu_bubbles");
-            base.LoadContent();
         }
 
         public override void UnloadContent()
         {
-            base.UnloadContent();
+
             this._stateManager.AddScreen(nextScreen);
         }
 

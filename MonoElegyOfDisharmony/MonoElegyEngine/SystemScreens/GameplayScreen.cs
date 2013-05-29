@@ -4,30 +4,29 @@ using EquestriEngine.Data.Scenes;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class GameplayScreen : GameScreen
+    public class GameplayScreen : DrawableGameScreen
     {
         BasicEffectObject eo;
 
         public GameplayScreen()
-            : base(true,true)
+            : base(false)
         {
 
         }
 
         public override void Initialize()
         {
-
+            base.Initialize();
         }
 
         public override void LoadContent()
         {
-            base.LoadContent();
             //eo = EquestrEngine.AssetManager.GetEffect("{basic_effect}") as BasicEffectObject;
         }
 
         public override void UnloadContent()
         {
-            base.UnloadContent();
+
         }
 
         public override void Update(float dt)

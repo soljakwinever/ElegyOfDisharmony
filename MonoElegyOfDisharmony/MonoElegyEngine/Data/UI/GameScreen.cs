@@ -3,10 +3,7 @@
     public abstract class GameScreen : Interfaces.IGameScreen
     {
         private bool 
-            _coversOthers,
-            _isCovered,
-            _hasFocus,
-            _getsInput;
+            _enabled;
 
         Objects.Graphics.TextureCollection _screenAssets;
 
@@ -28,32 +25,12 @@
             }
         }
 
-        public bool CoversOthers
-        {
-            get { return _coversOthers; }
-        }
 
-        public bool IsCovered
-        {
-            get { return _isCovered; }
-            set
-            {
-                _isCovered = value;
-            }
-        }
 
-        public bool GetsInput
+        public bool Enabled
         {
-            get { return _getsInput; }
-        }
-
-        public bool HasFocus
-        {
-            get { return _hasFocus; }
-            set
-            {
-                _hasFocus = value;
-            }
+            get { return _enabled; }
+            set { _enabled = value; }
         }
 
         public Systems.StateManager StateManager
@@ -67,10 +44,8 @@
             OnWindowHide,
             OnWindowDestroy;
 
-        public GameScreen(bool coversOthers, bool getsInput)
+        public GameScreen()
         {
-            _getsInput = getsInput;
-            _coversOthers = coversOthers;
             _screenAssets = new Objects.Graphics.TextureCollection();
         }
         ~GameScreen()
@@ -85,11 +60,6 @@
             if (_stateManager == null)
                 throw new Data.Exceptions.EngineException("Screen does not have a valid State Manager",true);
         }
-        
-        public virtual void LoadContent()
-        {
-
-        }
 
         public abstract void Update(float dt);
 
@@ -97,12 +67,5 @@
         {
 
         }
-
-        public virtual void UnloadContent()
-        {
-            
-        }
-
-        public abstract void Draw(float dt);
     }
 }

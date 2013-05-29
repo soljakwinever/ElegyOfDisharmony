@@ -9,11 +9,13 @@ namespace EquestriEngine.Data.Inputs
         Success,
         Fail = -1,
         True = 3,
-        False = 4
+        False = 4,
+        Yes = 8,
+        No = 9
     }
 
     public delegate MethodResult MethodParamResult(object sender, Data.Inputs.Interfaces.IEventInput input);
-    public delegate void ExecuteAction(object sender,MethodParamPair method, MethodResult result);
+    public delegate void ExecuteAction(object sender, MethodParamPair method, MethodResult result);
 
     public class MethodParamPair
     {
@@ -23,7 +25,9 @@ namespace EquestriEngine.Data.Inputs
 
         private Dictionary<MethodResult, int> _exitPaths;
 
-        public event ExecuteAction OnPostExecute;
+        public event ExecuteAction PostExecuteHandler;
+
+        private object sender;
 
         public int NextMethod
         {
@@ -34,6 +38,11 @@ namespace EquestriEngine.Data.Inputs
                 else
                     return -1;
             }
+        }
+
+        public MethodResult Result
+        {
+            get { return _result; }
         }
 
         public MethodParamPair(
@@ -50,7 +59,7 @@ namespace EquestriEngine.Data.Inputs
         public MethodParamPair(
     MethodParamResult method,
     Interfaces.IEventInput input,
-            Dictionary<MethodResult,int> _paths)
+            Dictionary<MethodResult, int> _paths)
         {
             _result = MethodResult.None;
             _method = method;
@@ -58,20 +67,22 @@ namespace EquestriEngine.Data.Inputs
             _exitPaths = _paths;
         }
 
-        public MethodResult ExecuteMethod(object sender)
+        public void ExecuteMethod(object sender)
         {
-            MethodResult result = 0;
             if (_method != null)
             {
-
-                result = _method.Invoke(sender, _params);
-                if(OnPostExecute != null)
-                    OnPostExecute(sender,this,result);
+                this.sender = sender;
+                IAsyncResult temp;
+                temp = _method.BeginInvoke(sender, _params, PostExecute, null);
+                //_result = _method.EndInvoke(temp);
             }
-            else
-                return MethodResult.Fail;
+        }
 
-            return result;
+        private void PostExecute(IAsyncResult syncResult)
+        {
+            _result = _method.EndInvoke(syncResult);
+            if (PostExecuteHandler != null)
+                PostExecuteHandler(sender, this, _result);
         }
     }
 }

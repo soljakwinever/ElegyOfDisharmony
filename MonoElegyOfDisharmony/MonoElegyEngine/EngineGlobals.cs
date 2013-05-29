@@ -14,11 +14,15 @@ namespace EquestriEngine
     public static class EngineGlobals
     {
         public static EquestriEngine GameReference;
+        public static Microsoft.Xna.Framework.GameTime GameTime;
 
-        public static void Wait(object sender, IEventInput input)
+        public static MethodResult Wait(object sender, IEventInput input)
         {
             IntInput IInput = (IntInput)input;
-            System.Threading.Thread.Sleep(IInput.Input);
+
+            System.Threading.Thread.Sleep(1000);
+
+            return MethodResult.Success;
         }
 
         #region Switches And Variables
@@ -224,14 +228,28 @@ namespace EquestriEngine
         {
             var sInput = (StringInput)input;
             string _lines = sInput.Input;
-            //var screen = new SystemScreens.MessageBoxScreen(_lines, Current_ActionList);
-            //GameReference.State_Manager.AddScreen(screen);
+            var screen = new SystemScreens.MessageBoxScreen(_lines);
+            GameReference.State_Manager.AddScreen(screen);
+            while (screen.Result != MethodResult.Yes)
+            {
+                System.Threading.Thread.Sleep(100);
+            }
+            return MethodResult.Success;
+        }
+
+        public static MethodResult WaitForInput(object sender, IEventInput input)
+        {
+            ControlInput controlInput = (ControlInput)input;
+            while (!controlInput.Controls.Input1())
+            {
+                System.Threading.Thread.Sleep(10);
+            }
             return MethodResult.Success;
         }
 
         public static MethodResult ShowDialogueChoice(object sender, IEventInput input)
         {
-            return MethodResult.Success;
+            return MethodResult.No;
         }
 
         #region Audio
@@ -377,19 +395,19 @@ namespace EquestriEngine
         }
     }
 
-    public class EquestriSkeleBatch : Spine.SkeletonRenderer
-    {
-        private bool _ready;
+    //public class EquestriSkeleBatch : Spine.SkeletonRenderer
+    //{
+    //    private bool _ready;
 
-        public bool Ready
-        {
-            get { return _ready; }
-        }
+    //    public bool Ready
+    //    {
+    //        get { return _ready; }
+    //    }
 
-        public EquestriSkeleBatch(Microsoft.Xna.Framework.Graphics.GraphicsDevice device)
-            : base(device)
-        {
-            _ready = true;
-        }
-    }
+    //    public EquestriSkeleBatch(Microsoft.Xna.Framework.Graphics.GraphicsDevice device)
+    //        : base(device)
+    //    {
+    //        _ready = true;
+    //    }
+    //}
 }

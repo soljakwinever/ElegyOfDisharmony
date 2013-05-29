@@ -10,7 +10,7 @@ namespace EquestriEngine
     public class EquestriEngine : Game
     {
         private static GameSettings _settings;
-        private static Color _clearColor; 
+        private static Color _clearColor;
 
         TextureObject errorTexture;
 
@@ -34,7 +34,7 @@ namespace EquestriEngine
 
         GraphicsDeviceManager graphics;
         protected Equestribatch spriteBatch;
-        protected static EquestriSkeleBatch _skelebatch;
+        //protected static EquestriSkeleBatch _skelebatch;
 
         public static readonly DepthStencilState
             DepthState,
@@ -73,10 +73,10 @@ namespace EquestriEngine
             get { return new Viewport(0, 0, _settings.WindowWidth, _settings.WindowHeight); }
         }
 
-        public EquestriSkeleBatch SkeleBatch
-        {
-            get { return _skelebatch; }
-        }
+        //public EquestriSkeleBatch SkeleBatch
+        //{
+        //    get { return _skelebatch; }
+        //}
 
         private static string _errorMessage;
 
@@ -132,7 +132,7 @@ namespace EquestriEngine
 #endif
             Content.RootDirectory = "Content";
 
-            this.Window.Title = string.Format("{0} - ver {1}",title,VERSION_NUMBER);
+            this.Window.Title = string.Format("{0} - ver {1}", title, VERSION_NUMBER);
         }
 
 
@@ -146,7 +146,7 @@ namespace EquestriEngine
         protected override void LoadContent()
         {
             spriteBatch = new Equestribatch(GraphicsDevice);
-            _skelebatch = new EquestriSkeleBatch(GraphicsDevice);
+            //_skelebatch = new EquestriSkeleBatch(GraphicsDevice);
             errorTexture = AssetManager.GetTexture("{error}");
             smallFont = AssetManager.GetFont("{smallfont}");
             TextureObjectFactory.Device_Ref = GraphicsDevice;
@@ -158,7 +158,7 @@ namespace EquestriEngine
             base.UnloadContent();
         }
         Microsoft.Xna.Framework.Input.KeyboardState ks, pks;
-
+        float time = 0;
         protected override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -171,13 +171,21 @@ namespace EquestriEngine
                 AssetManager.FrameCapture = true;
             }
 
+            EngineGlobals.GameTime = gameTime;
+
             if (_errorOccured)
             {
                 _debugConsole.Update(gameTime);
             }
             else
 #endif
-                base.Update(gameTime);
+            time += dt;
+            if (time > 10)
+            {
+                System.Windows.Forms.Application.DoEvents();
+                time = 0;
+            }
+            base.Update(gameTime);
         }
 
         protected override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
