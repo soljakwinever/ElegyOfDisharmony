@@ -20,3 +20,4 @@ H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoEleg
 H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\Tao.Sdl.dll
 H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\obj\Debug\MonoElegyEngine.pdb
 H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\obj\Debug\MonoElegyEngine.csprojResolveAssemblyReference.cache
+H:\Users\Aaron\Documents\GitHub\ElegyOfDisharmony\MonoElegyOfDisharmony\MonoElegyEngine\bin\Debug\MonoGame.Framework.pdb

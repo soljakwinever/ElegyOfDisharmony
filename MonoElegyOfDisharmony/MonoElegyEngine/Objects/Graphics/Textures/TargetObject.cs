@@ -46,7 +46,7 @@ namespace EquestriEngine.Objects.Graphics
             get 
             { 
                 if(_inUse)
-                    return EquestriEngine.AssetManager.Empty.Texture;
+                    return EngineGlobals.AssetManager.Empty.Texture;
                  else
                     return _texture; 
             }
@@ -67,14 +67,21 @@ namespace EquestriEngine.Objects.Graphics
         public override void UnloadAsset()
         {
             Texture.Dispose();
-            EquestriEngine.AssetManager.UnloadTexture(this, true);
+            EngineGlobals.AssetManager.UnloadTexture(this, true);
         }
 
         public void BeginTarget()
         {
             if (_inUse)
                 throw new Data.Exceptions.EngineException("Target already in use! End the target before calling begin",true);
-            devRef.SetRenderTarget(_texture as RenderTarget2D);
+            try
+            {
+                devRef.SetRenderTarget(_texture as RenderTarget2D);
+            }
+            catch
+            {
+
+            }
             _inUse = true;
         }
 

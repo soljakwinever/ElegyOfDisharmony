@@ -56,15 +56,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ElegyGame.cs" />
+    <Compile Include="ElegyOfDisharmonyGlobals.cs" />
+    <Compile Include="GameData\Battle\ActionArgs.cs" />
+    <Compile Include="GameData\Battle\BattleController.cs" />
+    <Compile Include="GameData\Battle\BattleData.cs" />
+    <Compile Include="GameData\Battle\Enemy\MobData.cs" />
+    <Compile Include="GameData\Battle\Player\CharacterData.cs" />
+    <Compile Include="GameData\Collections\BattleDataCollection.cs" />
+    <Compile Include="GameData\Item\Equippable\Costume.cs" />
+    <Compile Include="GameData\Item\Equippable\Weapon.cs" />
+    <Compile Include="GameData\Item\ItemData.cs" />
+    <Compile Include="GameData\Map\Character\Character.cs" />
+    <Compile Include="GameData\Skills\Skill.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screens\BattleScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
       <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Lidgren.Network">
       <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Lidgren.Network.dll</HintPath>
@@ -84,8 +94,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
+    <Folder Include="GameData\Item\Usable\" />
+    <Folder Include="Widgets\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+      <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
+      <Name>MonoGame.Framework.WindowsGL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoElegyEngine\MonoElegyEngine.csproj">
       <Project>{b180fa71-8cde-419d-8359-fdfbe98c5953}</Project>
       <Name>MonoElegyEngine</Name>

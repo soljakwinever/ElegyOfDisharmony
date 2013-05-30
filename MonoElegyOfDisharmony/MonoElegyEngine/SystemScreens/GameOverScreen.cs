@@ -18,13 +18,13 @@ namespace EquestriEngine.SystemScreens
         public GameOverScreen()
             :base(true)
         {
-            EquestriEngine.ClearColor = Color.Black;
+            EngineGlobals.GameReference.ClearColor = Color.Black;
             _logoColor = Color.Black;
         }
 
         public override void Initialize()
         {
-            logoPos = new Vector2(EquestriEngine.Settings.WindowWidth / 2, EquestriEngine.Settings.WindowHeight / 2);
+            logoPos = new Vector2(EngineGlobals.Settings.WindowWidth / 2, EngineGlobals.Settings.WindowHeight / 2);
             logoOrigin = new Vector2(_logo.Width / 2, _logo.Height / 2);
         }
 

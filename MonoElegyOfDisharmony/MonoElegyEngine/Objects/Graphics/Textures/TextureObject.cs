@@ -48,7 +48,7 @@ namespace EquestriEngine.Objects.Graphics
                     return _texture;
                 }
                 else
-                    return EquestriEngine.AssetManager.ErrorTexture.Texture;
+                    return EngineGlobals.GameReference.AssetManager.ErrorTexture.Texture;
             }
         }
 
@@ -102,7 +102,7 @@ namespace EquestriEngine.Objects.Graphics
 
         public virtual void UnloadAsset()
         {
-            EquestriEngine.AssetManager.UnloadTexture(_name,false);
+            EngineGlobals.GameReference.AssetManager.UnloadTexture(_name, false);
         }
 
         public override string ToString()
@@ -111,6 +111,11 @@ namespace EquestriEngine.Objects.Graphics
                 return string.Format("{0} - {1}", _name, _texture.IsDisposed);
             else
                 return string.Format("{0} - Null", _name);
+        }
+
+        public override int GetHashCode()
+        {
+            return _texture.GetHashCode();
         }
 
         public override bool Equals(object obj)

@@ -19,6 +19,8 @@ namespace EquestriEngine.Objects.Graphics
             _lowerLeft,
             _lowerRight;
 
+        GraphicsDevice device;
+
         public VertexPositionNormalTexture[] Vertices
         {
             get { return vertices; }

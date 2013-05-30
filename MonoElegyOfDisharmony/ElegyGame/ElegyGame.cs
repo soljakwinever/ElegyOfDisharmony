@@ -12,7 +12,7 @@ namespace ElegyGame
     public class ElegyGame : EquestriEngine.EquestriEngine
     {
         //Screens.ParticleTestImageScreen _Screen;
-        EquestriEngine.SystemScreens.BattleScreen _Screen;
+        Screens.BattleScreen _Screen;
         
         public ElegyGame()
             :base("Elegy Of Disharmony")
@@ -28,7 +28,7 @@ namespace ElegyGame
         protected override void Initialize()
         {
             //_Screen = new Screens.ParticleTestImageScreen(_stateManager);
-            _Screen = new EquestriEngine.SystemScreens.BattleScreen();
+            _Screen = new Screens.BattleScreen();
             base.Initialize();
         }
 

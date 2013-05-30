@@ -7,9 +7,9 @@ namespace EquestriEngine.Data.Inputs
 {
     public struct ControlInput : Interfaces.IEventInput
     {
-        private Controls.IControlScheme _control;
+        private Controls.InputControl _control;
 
-        public Controls.IControlScheme Controls
+        public Controls.InputControl Control
         {
             get { return _control; }
             set { _control = value; }

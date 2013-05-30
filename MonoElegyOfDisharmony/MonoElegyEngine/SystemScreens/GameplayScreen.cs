@@ -6,7 +6,6 @@ namespace EquestriEngine.SystemScreens
 {
     public class GameplayScreen : DrawableGameScreen
     {
-        BasicEffectObject eo;
 
         public GameplayScreen()
             : base(false)
@@ -22,6 +21,7 @@ namespace EquestriEngine.SystemScreens
         public override void LoadContent()
         {
             //eo = EquestrEngine.AssetManager.GetEffect("{basic_effect}") as BasicEffectObject;
+            System.Threading.Thread.Sleep(10000);
         }
 
         public override void UnloadContent()

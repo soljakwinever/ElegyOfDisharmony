@@ -24,9 +24,17 @@ namespace EquestriEngine.Data.UI.Interfaces
             set;
         }
 
+        bool Visible
+        {
+            get;
+        }
+
         void LoadContent();
         void UnloadContent();
         void Draw(float dt);
+
+        void Show();
+        void Hide();
 
         event GenericEvent
             OnWindowShow,

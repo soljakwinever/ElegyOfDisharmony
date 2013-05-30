@@ -73,10 +73,10 @@ namespace EquestriEngine.Data.Inputs
                 switch (_comparison)
                 {
                     case CompareType.Var_Gold:
-                        _inputA = Systems.DataManager.GetVariable("{gold}");
+                        _inputA = EngineGlobals.DataManager.GetVariable("{gold}");
                         break;
                     case CompareType.Var_ProfileName:
-                        _inputA = Systems.DataManager.GetVariable("{profile_name}");
+                        _inputA = EngineGlobals.DataManager.GetVariable("{profile_name}");
                         break;
                 }
             }

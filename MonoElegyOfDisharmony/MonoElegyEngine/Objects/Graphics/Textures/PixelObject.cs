@@ -46,7 +46,7 @@ namespace EquestriEngine.Objects.Graphics
         public override void UnloadAsset()
         {
             Texture.Dispose();
-            EquestriEngine.AssetManager.UnloadTexture(this, true);
+            EngineGlobals.AssetManager.UnloadTexture(this, true);
         }
     }
 }

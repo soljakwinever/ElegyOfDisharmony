@@ -9,8 +9,8 @@ namespace EquestriEngine
 {
     public class EquestriEngine : Game
     {
-        private static GameSettings _settings;
-        private static Color _clearColor;
+        private GameSettings _settings;
+        private Color _clearColor;
 
         TextureObject errorTexture;
 
@@ -18,7 +18,7 @@ namespace EquestriEngine
 
         public const string VERSION_NUMBER = "1.0.0.0";
 
-        protected static AssetManager _assetManager = null;
+        protected AssetManager _assetManager = null;
         protected DataManager _dataManager = null;
         protected InputManager _inputManager = null;
         protected WidgetDrawer _widgetDisplay = null;
@@ -42,12 +42,17 @@ namespace EquestriEngine
 
         static bool _errorOccured;
 
-        public static AssetManager AssetManager
+        public AssetManager AssetManager
         {
             get { return _assetManager; }
         }
 
-        public static GameSettings Settings
+        public DataManager DataManager
+        {
+            get { return _dataManager; }
+        }
+
+        public GameSettings Settings
         {
             get { return _settings; }
         }
@@ -62,13 +67,13 @@ namespace EquestriEngine
             get { return _widgetDisplay; }
         }
 
-        public static Color ClearColor
+        public Color ClearColor
         {
             get { return _clearColor; }
             set { _clearColor = value; }
         }
 
-        public static Viewport ViewPort
+        public Viewport ViewPort
         {
             get { return new Viewport(0, 0, _settings.WindowWidth, _settings.WindowHeight); }
         }
@@ -180,7 +185,7 @@ namespace EquestriEngine
             else
 #endif
             time += dt;
-            if (time > 10)
+            if (time > 0.1f)
             {
                 System.Windows.Forms.Application.DoEvents();
                 time = 0;

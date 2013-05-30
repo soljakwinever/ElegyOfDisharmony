@@ -5,6 +5,22 @@ using System.Text;
 
 namespace EquestriEngine.Data.Controls
 {
+    public enum ControlTypes
+    {
+        None,
+        Interaction,
+        Jump,
+        Menu,
+        Left,
+        Right,
+        Up,
+        Down
+#if DEBUG
+        ,CONSOLE
+        ,CONOLE_SWITCH
+#endif
+    }
+
     public interface IControlScheme
     {
         //These two will be used as a velocity type thing. 
@@ -20,18 +36,10 @@ namespace EquestriEngine.Data.Controls
             get;
         }
 
-        //May be used for interaction
-        bool Input1();
-        //May be used for character selection access
-        bool Input2();
-        //Accessing Character menu perhaps?
-        bool Input3();
-        //Fuck I dunno about these next three
-        bool Input4();
-        //Undecided
-        bool Input5();
-        //Undecided
-        bool Input6();
+        InputControl this[ControlTypes type]
+        {
+            get;
+        }
 #if DEBUG
         bool ConsoleButton();
         bool ConsoleSwitchButton();

@@ -50,9 +50,9 @@ namespace EquestriEngine.SystemWidgets
             _startLife = _life = life;
             _achievement = achievement;
 
-            initPosition = new Vector2(EquestriEngine.Settings.WindowWidth - WIDGET_WIDTH - 4, EquestriEngine.Settings.WindowHeight);
+            initPosition = new Vector2(EngineGlobals.Settings.WindowWidth - WIDGET_WIDTH - 4, EngineGlobals.Settings.WindowHeight);
 
-            finalPosition = new Vector2(EquestriEngine.Settings.WindowWidth - WIDGET_WIDTH - 4, EquestriEngine.Settings.WindowHeight - WIDGET_HEIGHT - Height_Displace);
+            finalPosition = new Vector2(EngineGlobals.Settings.WindowWidth - WIDGET_WIDTH - 4, EngineGlobals.Settings.WindowHeight - WIDGET_HEIGHT - Height_Displace);
 
             Height_Displace += WIDGET_HEIGHT;
             Position = new Vector2(0, -WIDGET_HEIGHT);
@@ -63,12 +63,12 @@ namespace EquestriEngine.SystemWidgets
 
         public override void Init()
         {
-            _windowTarget = EquestriEngine.AssetManager.CreateTargetObject("{achievementgenerator" + instanceNumber + "}", WIDGET_WIDTH, WIDGET_HEIGHT);
+            _windowTarget = EngineGlobals.GameReference.AssetManager.CreateTargetObject("{achievementgenerator" + instanceNumber + "}", WIDGET_WIDTH, WIDGET_HEIGHT);
 
-            _displayFont = EquestriEngine.AssetManager.GetFont("{smallfont}");
-            _windowTexture = EquestriEngine.AssetManager.CreatePixelTexture("{awind_texture}");
+            _displayFont = EngineGlobals.GameReference.AssetManager.GetFont("{smallfont}");
+            _windowTexture = EngineGlobals.GameReference.AssetManager.CreatePixelTexture("{awind_texture}");
 
-            _achievementTexture = EquestriEngine.AssetManager.GetTexture("{achievement}");
+            _achievementTexture = EngineGlobals.GameReference.AssetManager.GetTexture("{achievement}");
 
             _windowTarget.RunTarget(GenerateWidget);
 

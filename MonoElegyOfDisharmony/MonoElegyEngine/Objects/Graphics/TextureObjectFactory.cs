@@ -17,7 +17,7 @@ namespace EquestriEngine.Objects.Graphics
 
         public static void GenerateTextureObjectFromPopText(out TextureObject output,int num, Color? color = null)
         {
-            TextureAtlas atlas = EquestriEngine.AssetManager.GetTexture("{pop_text}") as TextureAtlas;
+            TextureAtlas atlas = EngineGlobals.AssetManager.GetTexture("{pop_text}") as TextureAtlas;
 
             string temp = "" + num;
             int width = 0, height = 0;
@@ -47,7 +47,7 @@ namespace EquestriEngine.Objects.Graphics
 
             Device_Ref.SetRenderTarget(null);
 
-            output = EquestriEngine.AssetManager.CreateTextureObjectFromTarget("{"+temp+"}", _textTarget);
+            output = EngineGlobals.AssetManager.CreateTextureObjectFromTarget("{"+temp+"}", _textTarget);
 
             _textTarget.Dispose();
         }

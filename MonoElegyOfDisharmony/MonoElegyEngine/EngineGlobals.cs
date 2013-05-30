@@ -11,10 +11,36 @@ namespace EquestriEngine
     //public delegate void TriggerEvent(Objects.Nodes.Node trigger, NodeFlags triggerFlags);
     public delegate void GenericEvent(object sender, IEventInput input);
 
-    public static class EngineGlobals
+    public class EngineGlobals
     {
         public static EquestriEngine GameReference;
         public static Microsoft.Xna.Framework.GameTime GameTime;
+
+        public static GameSettings Settings
+        {
+            get { return GameReference.Settings; }
+        }
+        
+        public static AssetManager AssetManager
+        {
+            get { return GameReference.AssetManager; }
+        }
+
+        public static DataManager DataManager
+        {
+            get { return GameReference.DataManager; }
+        }
+
+        public static StateManager StateManager
+        {
+            get { return GameReference.State_Manager; }
+        }
+
+
+        protected EngineGlobals()
+        {
+
+        }
 
         public static MethodResult Wait(object sender, IEventInput input)
         {
@@ -30,21 +56,21 @@ namespace EquestriEngine
         public static MethodResult ToggleSwitch(object sender, IEventInput input)
         {
             var sInput = (StringInput)input;
-            Systems.DataManager.ToggleSwitch(sInput.Input);
+            EngineGlobals.DataManager.ToggleSwitch(sInput.Input);
             return MethodResult.Success;
         }
 
         public static MethodResult TurnOnSwitch(object sender, IEventInput input)
         {
             var sInput = (StringInput)input;
-            Systems.DataManager.TurnOnSwitch(sInput.Input);
+            EngineGlobals.DataManager.TurnOnSwitch(sInput.Input);
             return MethodResult.True;
         }
 
         public static MethodResult TurnOffSwitch(object sender, IEventInput input)
         {
             var sInput = (StringInput)input;
-            Systems.DataManager.TurnOffSwitch(sInput.Input);
+            EngineGlobals.DataManager.TurnOffSwitch(sInput.Input);
             return MethodResult.False;
         }
 
@@ -74,7 +100,7 @@ namespace EquestriEngine
                         Variable.Set(temp.VarInput, temp.IntInput);
                         break;
                     case AdjustType.SetToGold:
-                        Variable.Set(temp.VarInput, Systems.DataManager.GetVariable("{gold}").AsInt);
+                        Variable.Set(temp.VarInput, EngineGlobals.DataManager.GetVariable("{gold}").AsInt);
                         break;
                     case AdjustType.SetToPlayerX:
                         break;
@@ -190,7 +216,7 @@ namespace EquestriEngine
 
         public static MethodResult AdjustGold(object sender, IEventInput input)
         {
-            var gold = DataManager.GetVariable("{gold}");
+            var gold = EngineGlobals.DataManager.GetVariable("{gold}");
             IntInput temp = new IntInput();
             if (input is IntInput)
                 temp = (IntInput)input;
@@ -198,22 +224,12 @@ namespace EquestriEngine
                 EquestriEngine.ErrorMessage = "Invalid input passed into Adjust Gold";
 
             var newGoldDisplay = new SystemWidgets.GoldDisplay(gold.AsInt, temp.Input);
+
+
             GameReference.WidgetDrawer.AddWidget(newGoldDisplay);
 
 
             gold.AsInt += temp.Input;
-            return MethodResult.Success;
-        }
-
-        /// <summary>
-        /// Starts a battle sequence
-        /// </summary>
-        /// <param name="sender">The object that sent the request </param>
-        /// <param name="input">A BattleInput, this will hold information on enemies in battle, 
-        /// and spoils, as well as info about the type of battle</param>
-        public static MethodResult InitiateBattle(object sender, IEventInput input)
-        {
-            //var bScreen = new SystemScreens.BattleScreen("level.level");
             return MethodResult.Success;
         }
 
@@ -240,7 +256,7 @@ namespace EquestriEngine
         public static MethodResult WaitForInput(object sender, IEventInput input)
         {
             ControlInput controlInput = (ControlInput)input;
-            while (!controlInput.Controls.Input1())
+            while (!controlInput.Control.Value)
             {
                 System.Threading.Thread.Sleep(10);
             }

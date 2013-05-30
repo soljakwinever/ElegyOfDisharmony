@@ -8,7 +8,6 @@ namespace EquestriEngine.Systems
     {
         private static GameScreenCollection _gameScreens;
         System.Collections.Generic.List<IGameScreen> updateThisFrame;
-        private static bool _ready;
 
         public StateManager(object game)
             : base(game)
@@ -41,7 +40,6 @@ namespace EquestriEngine.Systems
                 screen.LoadContent();
             }
             base.LoadContent();
-            _ready = true;
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)

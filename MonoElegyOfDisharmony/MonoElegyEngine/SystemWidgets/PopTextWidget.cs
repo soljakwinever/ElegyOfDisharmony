@@ -65,7 +65,7 @@ namespace EquestriEngine.SystemWidgets
 
         public override void Init()
         {
-            _popText = EquestriEngine.AssetManager.CreateTextureObjectFromFile("{pop_text}",@"Graphics\UI\pop_text") as TextureAtlas;
+            _popText = EngineGlobals.AssetManager.CreateTextureObjectFromFile("{pop_text}",@"Graphics\UI\pop_text") as TextureAtlas;
             TextureObjectFactory.GenerateTextureObjectFromPopText(out _number, _num, Color.Transparent);
             Show();
         }

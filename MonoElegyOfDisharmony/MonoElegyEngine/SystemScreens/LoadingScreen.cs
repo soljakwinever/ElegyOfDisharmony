@@ -51,16 +51,16 @@ namespace EquestriEngine.SystemScreens
 
         public override void Initialize()
         {
-
+            _loadMethod.BeginInvoke(new System.AsyncCallback(FinishedLoading), null);
         }
 
         public override void LoadContent()
         {
             if (fadeBlack)
-                _background = EquestriEngine.AssetManager.CreatePixelTexture("{background}", Color.Black);
+                _background = EngineGlobals.AssetManager.CreatePixelTexture("{background}", Color.Black);
             else
-                _background = EquestriEngine.AssetManager.GetTexture("{load}");
-            _loadMethod.BeginInvoke(new System.AsyncCallback(FinishedLoading), null);
+                _background = EngineGlobals.AssetManager.GetTexture("{load}");
+
         }
 
         private void FinishedLoading(System.IAsyncResult result)
@@ -81,9 +81,8 @@ namespace EquestriEngine.SystemScreens
                 _updateMathod.Invoke(dt);
             else
             {
-                if (fadeAmount < 1 && !finishedLoading)
-                    fadeAmount += dt;
-                else if(finishedLoading)
+
+                if(finishedLoading)
                 {
                     if (fadeAmount > 0)
                         fadeAmount -= dt;
@@ -92,6 +91,8 @@ namespace EquestriEngine.SystemScreens
                         _stateManager.RemoveScreen(this);
                     }
                 }
+                else if (fadeAmount < 1)
+                    fadeAmount += dt;
             }
         }
 
@@ -106,7 +107,7 @@ namespace EquestriEngine.SystemScreens
                 SpriteBatch.Begin();
 
                 SpriteBatch.Draw(_background.Texture,
-                    new Rectangle(0,0,EquestriEngine.Settings.WindowWidth,EquestriEngine.Settings.WindowHeight),
+                    new Rectangle(0, 0, EngineGlobals.Settings.WindowWidth, EngineGlobals.Settings.WindowHeight),
                     Color.Multiply(Color.White,fadeAmount));
 
                 SpriteBatch.End();

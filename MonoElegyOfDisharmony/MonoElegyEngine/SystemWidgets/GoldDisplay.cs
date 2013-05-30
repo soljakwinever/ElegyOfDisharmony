@@ -34,8 +34,8 @@ namespace EquestriEngine.SystemWidgets
         {                
             startGold = goldDisplayed = _startGold;
             goldRecieved = _goldRecieved;
-                
-            _displayPos = new Vector2(EquestriEngine.Settings.WindowWidth - 80, EquestriEngine.Settings.WindowHeight - 46);
+
+            _displayPos = new Vector2(EngineGlobals.Settings.WindowWidth - 80, EngineGlobals.Settings.WindowHeight - 46);
         }
 
         public override void Init()
@@ -44,8 +44,8 @@ namespace EquestriEngine.SystemWidgets
                 displayComplete = 
                 delayComplete = 
                 exitComplete = false;
-            _bits = EquestriEngine.AssetManager.GetTexture("{bits}");
-            _fontDisplay = EquestriEngine.AssetManager.GetFont("{largefont}");
+            _bits = EngineGlobals.GameReference.AssetManager.GetTexture("{bits}");
+            _fontDisplay = EngineGlobals.GameReference.AssetManager.GetFont("{largefont}");
             Show();
         }
 
@@ -61,7 +61,7 @@ namespace EquestriEngine.SystemWidgets
         public override void Update(float dt)
         {
             timer += dt;
-            _displayPos.Y = MathHelper.Slerp(_displayPos.Y,EquestriEngine.Settings.WindowHeight - System.Math.Max(AchievementDisplay.Height_Displace + 46, 128),0.1f);
+            _displayPos.Y = MathHelper.Slerp(_displayPos.Y, EngineGlobals.Settings.WindowHeight - System.Math.Max(AchievementDisplay.Height_Displace + 46, 128), 0.1f);
             if (!entryComplete && timer > ENTRYTIME)
             {
                 timer = 0;

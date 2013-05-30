@@ -10,7 +10,8 @@ namespace EquestriEngine.Data.UI
         private bool
             _coversOthers,
             _isCovered,
-            _onTop;
+            _onTop,
+            _visible;
 
         public bool OnTop
         {
@@ -29,6 +30,15 @@ namespace EquestriEngine.Data.UI
             get { return _coversOthers; }
         }
 
+        public bool Visible
+        {
+            get { return _visible; }
+        }
+
+        public event GenericEvent
+            OnWindowShow,
+            OnWindowHide;
+
         public DrawableGameScreen(bool coversOthers)
             : base()
         {
@@ -38,5 +48,23 @@ namespace EquestriEngine.Data.UI
         public abstract void LoadContent();
         public abstract void UnloadContent();
         public abstract void Draw(float dt);
+
+        public void Show()
+        {
+            _visible = true;
+            if (OnWindowHide != null)
+            {
+                OnWindowShow(this, null);
+            }
+        }
+
+        public void Hide()
+        {
+            _visible = false;
+            if (OnWindowHide != null)
+            {
+                OnWindowHide(this, null);
+            }
+        }
     }
 }

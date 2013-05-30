@@ -47,7 +47,7 @@ namespace EquestriEngine.Systems
         public ConsoleWindow(object game)
             : base(game)
         {
-            _font = EquestriEngine.AssetManager.CreateFontFromFile("{console}", @"fonts\celestia_redux");
+            _font = EngineGlobals.AssetManager.CreateFontFromFile("{console}", @"fonts\celestia_redux");
             _consoleColor = Color.Multiply(Color.White, 0.5f);
             _currentMode = ConsoleMode.Console;
             _consoleInput = new Variable("")
@@ -65,8 +65,8 @@ namespace EquestriEngine.Systems
 
         protected override void LoadContent()
         {
-            _windowTexture = EquestriEngine.AssetManager.CreatePixelTexture("{console}");
-            _renderedText = EquestriEngine.AssetManager.CreateTargetObject("{rendred_text}", EquestriEngine.Settings.WindowWidth, 256);
+            _windowTexture = EngineGlobals.GameReference.AssetManager.CreatePixelTexture("{console}");
+            _renderedText = EngineGlobals.GameReference.AssetManager.CreateTargetObject("{rendred_text}", EngineGlobals.Settings.WindowWidth, 256);
             base.LoadContent();
         }
 
@@ -112,7 +112,7 @@ namespace EquestriEngine.Systems
                         {
                           frames,
                           ((int)System.Diagnostics.Process.GetCurrentProcess().PagedMemorySize64 / 1048576),
-                          EquestriEngine.AssetManager.ItemsLoaded
+                          EngineGlobals.AssetManager.ItemsLoaded
                         });
                         Refresh_Required = true;
                         frames = 0;
@@ -135,8 +135,8 @@ namespace EquestriEngine.Systems
                 windowShown = (int)MathHelper.Slerp(0, CONSOLE_HEIGHT, showAmount);
                 _consoleTextPos = 
                     Vector2.Slerp(
-                    new Vector2(0, EquestriEngine.Settings.WindowHeight), 
-                    new Vector2(0, EquestriEngine.Settings.WindowHeight - CONSOLE_HEIGHT), showAmount);
+                    new Vector2(0, EngineGlobals.Settings.WindowHeight),
+                    new Vector2(0, EngineGlobals.Settings.WindowHeight - CONSOLE_HEIGHT), showAmount);
             }
         }
 
@@ -144,7 +144,7 @@ namespace EquestriEngine.Systems
 
         public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
-            if (!_consoleClosed && !EquestriEngine.AssetManager.FrameCapture)
+            if (!_consoleClosed && !EngineGlobals.GameReference.AssetManager.FrameCapture)
             {
                 if (Refresh_Required)
                 {
@@ -158,17 +158,17 @@ namespace EquestriEngine.Systems
                     null, EquestriEngine.DepthState, null);
                 if(_windowTexture.Ready)
                 SpriteBatch.Draw(_windowTexture.Texture,
-                    new Rectangle(0, EquestriEngine.Settings.WindowHeight - windowShown, EquestriEngine.Settings.WindowWidth, windowShown), Color.Multiply(_consoleColor, showAmount));
+                    new Rectangle(0, EngineGlobals.Settings.WindowHeight - windowShown, EngineGlobals.Settings.WindowWidth, windowShown), Color.Multiply(_consoleColor, showAmount));
 
                 SpriteBatch.Draw(_renderedText.Texture, _consoleTextPos, Color.Multiply(Color.White, showAmount));
 
                 if (windowShown >= 128)
                 {
                     SpriteBatch.Draw(_windowTexture.Texture,
-                        new Rectangle(0, EquestriEngine.Settings.WindowHeight - 32, EquestriEngine.Settings.WindowWidth, 32), 
+                        new Rectangle(0, EngineGlobals.Settings.WindowHeight - 32, EngineGlobals.Settings.WindowWidth, 32), 
                         showAmount > 0.75f ? Color.Multiply(_consoleColor, (showAmount - 0.75f) / 0.25f) : Color.Transparent);
-                    SpriteBatch.DrawString(_font, _consoleInput.AsString + "|", new Vector2(4, EquestriEngine.Settings.WindowHeight - 26) + Vector2.One, Color.Black);
-                    SpriteBatch.DrawString(_font, _consoleInput.AsString + "|", new Vector2(4, EquestriEngine.Settings.WindowHeight - 26), Color.Blue);
+                    SpriteBatch.DrawString(_font, _consoleInput.AsString + "|", new Vector2(4, EngineGlobals.Settings.WindowHeight - 26) + Vector2.One, Color.Black);
+                    SpriteBatch.DrawString(_font, _consoleInput.AsString + "|", new Vector2(4, EngineGlobals.Settings.WindowHeight - 26), Color.Blue);
                 }
 
                 SpriteBatch.End();
@@ -192,10 +192,10 @@ namespace EquestriEngine.Systems
                     _entries = _consoleEntries;
                     break;
                 case ConsoleMode.SwitchView:
-                    _entries = DataManager.PrintSwitches(0);
+                    _entries = EngineGlobals.DataManager.PrintSwitches(0);
                     break;
                 case ConsoleMode.VariableView:
-                    _entries = DataManager.PrintVariables(0);
+                    _entries = EngineGlobals.DataManager.PrintVariables(0);
                     break;
                 case ConsoleMode.Stats:
                     _entries = "Getting Engine Stats...";

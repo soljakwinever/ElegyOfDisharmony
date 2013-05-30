@@ -5,11 +5,6 @@ using EquestriEngine.Objects.Graphics;
 
 namespace EquestriEngine.SystemScreens
 {
-    struct TextLineData
-    {
-        string _text;
-    }
-
     public enum MessageBoxSpeed
     {
         Slow = 125,
@@ -30,10 +25,6 @@ namespace EquestriEngine.SystemScreens
             boxPosition,
             boxOrigin;
 
-        ActionList _actions;
-
-        TextLineData[][] _data;
-        private int _currentWindow;
         string message;
         string name;
 
@@ -64,8 +55,7 @@ namespace EquestriEngine.SystemScreens
             messageDisplayed;
 
         private float alphaModifer,
-            _deltaTime,
-            DEBUG_MESSAGE_TIME = 0.75f;
+            _deltaTime;
 
         private int _charactersShown = 0;
 
@@ -73,8 +63,8 @@ namespace EquestriEngine.SystemScreens
             : base(false)
         {
             Systems.InputManager.RegisterScreen(this);
-            endPos = new Vector2(EquestriEngine.Settings.WindowWidth / 2, EquestriEngine.Settings.WindowHeight / 1.25f);
-            startPos = new Vector2(EquestriEngine.Settings.WindowWidth / 2, EquestriEngine.Settings.WindowHeight + 200);
+            endPos = new Vector2(EngineGlobals.Settings.WindowWidth / 2, EngineGlobals.Settings.WindowHeight / 1.25f);
+            startPos = new Vector2(EngineGlobals.Settings.WindowWidth / 2, EngineGlobals.Settings.WindowHeight + 200);
             //_data = new TextLineData[_windowLines.Length / 4][];
             var rough = _message.Split(new string[] { "/n[", "]" }, System.StringSplitOptions.RemoveEmptyEntries);
             if (rough.Length > 1)
@@ -85,7 +75,7 @@ namespace EquestriEngine.SystemScreens
             else
                 message = rough[0];
 
-            method = new Data.Inputs.MethodParamPair(EngineGlobals.WaitForInput, new Data.Inputs.ControlInput() { Controls = this.ControlReference }, 0);
+            method = new Data.Inputs.MethodParamPair(EngineGlobals.WaitForInput, new Data.Inputs.ControlInput() {  Control = this.ControlReference[Data.Controls.ControlTypes.Interaction] }, 0);
 
         }
 
@@ -98,11 +88,11 @@ namespace EquestriEngine.SystemScreens
         {
 
             //_messageBoxWindow = Systems.AssetManager.GetTexture("message_box");
-            _messageBoxWindowTexture = EquestriEngine.AssetManager.CreateTextureObjectFromFile("message_box", @"Graphics\UI\MessageBox");
-            _nameBoxWindowTexture = EquestriEngine.AssetManager.CreateTextureObjectFromFile("name_box", @"Graphics\UI\namebox");
-            _continueArrowTexture = EquestriEngine.AssetManager.CreateTextureObjectFromFile("continue_arrow", @"Graphics\UI\textbox_arrow");
+            _messageBoxWindowTexture = EngineGlobals.GameReference.AssetManager.CreateTextureObjectFromFile("message_box", @"Graphics\UI\MessageBox");
+            _nameBoxWindowTexture = EngineGlobals.GameReference.AssetManager.CreateTextureObjectFromFile("name_box", @"Graphics\UI\namebox");
+            _continueArrowTexture = EngineGlobals.GameReference.AssetManager.CreateTextureObjectFromFile("continue_arrow", @"Graphics\UI\textbox_arrow");
 
-            _messageBoxFont = EquestriEngine.AssetManager.GetFont("{largefont}");
+            _messageBoxFont = EngineGlobals.GameReference.AssetManager.GetFont("{largefont}");
             name = "Fluttershy";
         }
 
@@ -181,7 +171,7 @@ namespace EquestriEngine.SystemScreens
             //    SpriteBatch.Draw(_nameBoxWindow.Texture, boxPosition - new Vector2(320, 200), Color.Multiply(Color.White, alphaModifer));
             boxOrigin = new Vector2(_messageBoxWindowTexture.Width / 2, _messageBoxWindowTexture.Height / 2);
             SpriteBatch.Draw(_messageBoxWindowTexture.Texture, boxPosition, null,
-                Color.Multiply(EquestriEngine.Settings.SkinColor, alphaModifer), 0.0f, boxOrigin, 1, Microsoft.Xna.Framework.Graphics.SpriteEffects.None, 0.0f);
+                Color.Multiply(EngineGlobals.Settings.SkinColor, alphaModifer), 0.0f, boxOrigin, 1, Microsoft.Xna.Framework.Graphics.SpriteEffects.None, 0.0f);
 
             SpriteBatch.DrawString(_messageBoxFont, message.Substring(0, _charactersShown), boxPosition - new Vector2(319, 71), Color.Multiply(Color.Black, alphaModifer));
             SpriteBatch.DrawString(_messageBoxFont, message.Substring(0, _charactersShown), boxPosition - new Vector2(320, 72), Color.Multiply(Color.White, alphaModifer));
@@ -198,14 +188,14 @@ namespace EquestriEngine.SystemScreens
             int width = (int)_messageBoxFont.Measure(name).X;
             sb.Draw(_nameBoxWindowTexture.Texture, Vector2.Zero,
                 new Rectangle(0, 0, 25, _nameBoxWindowTexture.Height),
-                EquestriEngine.Settings.SkinColor);
+                EngineGlobals.Settings.SkinColor);
             sb.Draw(_nameBoxWindowTexture.Texture,
                 new Rectangle(25, 0, width, _nameBoxWindowTexture.Height),
                 new Rectangle(26, 0, 1, _nameBoxWindowTexture.Height),
-                EquestriEngine.Settings.SkinColor);
+                EngineGlobals.Settings.SkinColor);
             sb.Draw(_nameBoxWindowTexture.Texture, new Vector2(25 + width, 0),
                 new Rectangle(_nameBoxWindowTexture.Width - 25, 0, 25, _nameBoxWindowTexture.Height),
-                EquestriEngine.Settings.SkinColor);
+                EngineGlobals.Settings.SkinColor);
             sb.DrawString(_messageBoxFont, name, new Vector2(26, 13), Color.Black);
             sb.DrawString(_messageBoxFont, name, new Vector2(25, 12), Color.White);
         }

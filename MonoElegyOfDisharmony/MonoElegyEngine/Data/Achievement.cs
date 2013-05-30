@@ -33,6 +33,8 @@ namespace EquestriEngine.Data
 
         Inputs.MethodParamPair _rewardMethod;
 
+        public event GenericEvent OnAchievementUnlocked;
+
         private const string ACHIEVEMENT_SHEET = "{achievement}";
 
         public string Name
@@ -107,6 +109,10 @@ namespace EquestriEngine.Data
         public Achievement()
         {
 
+        }
+        ~Achievement()
+        {
+            OnAchievementUnlocked = null;
         }
 
         public Achievement(Interfaces.IDataEntry data, CheckValue cval = CheckValue.ValueEqual, object val2Check = null)
@@ -205,11 +211,17 @@ namespace EquestriEngine.Data
             }
         }
 
+
         public void GiveReward()
         {
             Systems.ConsoleWindow.WriteLine("{0}\n{1}\nAchievement Get!",_name,_desc);
-            var temp = new SystemWidgets.AchievementDisplay(8.0f,this);
-            EngineGlobals.GameReference.WidgetDrawer.AddWidget(temp);
+            //var temp = new SystemWidgets.AchievementDisplay(8.0f,this);
+            //EngineGlobals.GameReference.WidgetDrawer.AddWidget(temp);
+
+            if (OnAchievementUnlocked != null)
+            {
+                OnAchievementUnlocked(this, null);
+            }
             if (_rewardMethod != null)
                 _rewardMethod.ExecuteMethod(this);
             _unlocked = true;

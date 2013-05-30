@@ -40,18 +40,17 @@
         }
 
         public event GenericEvent
-            OnWindowShow,
-            OnWindowHide,
             OnWindowDestroy;
 
         public GameScreen()
         {
             _screenAssets = new Objects.Graphics.TextureCollection();
+            OnWindowDestroy = null;
         }
         ~GameScreen()
         {
-            OnWindowShow = null;
-            OnWindowHide = null;
+            if(OnWindowDestroy != null)
+                OnWindowDestroy(null, new Inputs.IntInput() { Input = 100 });
             OnWindowDestroy = null;
         }
 

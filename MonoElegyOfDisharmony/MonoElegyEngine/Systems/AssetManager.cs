@@ -119,7 +119,7 @@ namespace EquestriEngine.Systems
                 var largeFont = new FontObject("{largefont}", @"fonts\celestia_redux_large");
                 _fonts["{largefont}"] = largeFont;
 
-                _frameCapture = new TargetObject("{screen}", GraphicsDevice, EquestriEngine.Settings.WindowWidth, EquestriEngine.Settings.WindowHeight);
+                _frameCapture = new TargetObject("{screen}", GraphicsDevice, EngineGlobals.Settings.WindowWidth, EngineGlobals.Settings.WindowHeight);
                 _empty = CreatePixelTexture("{empty}", Color.Transparent);
                 _singleWhite = CreatePixelTexture("{single}");
             }

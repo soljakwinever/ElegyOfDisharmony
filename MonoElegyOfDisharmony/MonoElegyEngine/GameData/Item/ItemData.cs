@@ -5,6 +5,12 @@ using System.Text;
 
 namespace EquestriEngine.GameData.Item
 {
+    public enum Rarity
+    {
+        None = 1,
+        Common = 25
+    }
+
     public class ItemData
     {
         private string _name;
@@ -23,6 +29,12 @@ namespace EquestriEngine.GameData.Item
         {
             get { return _description; }
             set { _description = value; }
+        }
+
+        public int Cost
+        {
+            get { return _cost; }
+            set { _cost = value; }
         }
 
         public ItemData(string name, string description, bool equipable)

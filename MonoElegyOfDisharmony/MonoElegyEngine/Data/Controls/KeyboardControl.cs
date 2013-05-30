@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace EquestriEngine.Data.Controls
 {
+
     public class KeyboardControl : IControlScheme
     {
         private KeyboardState ks, pks;
@@ -10,15 +11,7 @@ namespace EquestriEngine.Data.Controls
         private float _x, _y;
 
         //Controls
-        Dictionary<string, Keys[]> _keyAllocations;
-        private const string
-            INTERACTION_KEY = "{interaction}",
-            JUMP_KEY = "{jump}",
-            MENU_KEY = "{menu}",
-            LEFT_KEY = "{left}",
-            RIGHT_KEY = "{right}",
-            UP_KEY = "{up}",
-            DOWN_KEY = "{down}";
+        Dictionary<ControlTypes, Keys[]> _keyAllocations;
 #if DEBUG
         private const string
             CONSOLE_KEY = "{console}",
@@ -27,6 +20,9 @@ namespace EquestriEngine.Data.Controls
             SWTPAGE_SWITCH_KEY = "{sswitch}";
 #endif
 
+
+        Dictionary<ControlTypes, InputControl> _inputs;
+
         public float X
         {
             get { return _x; }
@@ -34,6 +30,11 @@ namespace EquestriEngine.Data.Controls
         public float Y
         {
             get { return _y; }
+        }
+
+        public InputControl this[ControlTypes control]
+        {
+            get { return _inputs[control]; }
         }
 
         public KeyboardControl()
@@ -51,11 +52,37 @@ namespace EquestriEngine.Data.Controls
                 Keys.Left,
                 Keys.Right
             };
-            _keyAllocations = new Dictionary<string, Keys[]>();
-            _keyAllocations[INTERACTION_KEY] = new Keys[]
+            _inputs = new Dictionary<ControlTypes,InputControl>();
+            _inputs[ControlTypes.Interaction] = new InputControl();
+            _keyAllocations = new Dictionary<ControlTypes, Keys[]>();
+            InitDefault();
+        }
+
+        private void InitDefault()
+        {
+            _keyAllocations[ControlTypes.Interaction] = new Keys[]
+                {
+                    Keys.E
+                };
+
+            _keyAllocations[ControlTypes.Jump] = new Keys[]
+                {
+                    Keys.Q,
+                    Keys.Space
+                };
+            _keyAllocations[ControlTypes.Menu] = new Keys[]
+                {
+                    Keys.Escape
+                };
+            _keyAllocations[ControlTypes.CONSOLE] = new Keys[]
+                {
+                    Keys.OemTilde
+                };
+
+            foreach (ControlTypes t in _keyAllocations.Keys)
             {
-                Keys.E
-            };
+                _inputs[t] = new InputControl();
+            }
         }
 
         public static KeyboardControl DefaultControls
@@ -63,27 +90,29 @@ namespace EquestriEngine.Data.Controls
             get
             {
                 KeyboardControl controls = new KeyboardControl();
-                controls._keyAllocations[INTERACTION_KEY] = new Keys[]
+                controls._keyAllocations[ControlTypes.Interaction] = new Keys[]
                 {
                     Keys.E
                 };
-                controls._keyAllocations[JUMP_KEY] = new Keys[]
+                
+                controls._keyAllocations[ControlTypes.Jump] = new Keys[]
                 {
                     Keys.Q,
                     Keys.Space
                 };
-                controls._keyAllocations[MENU_KEY] = new Keys[]
+                controls._keyAllocations[ControlTypes.Menu] = new Keys[]
                 {
                     Keys.Escape
                 };
-                controls._keyAllocations[MENU_KEY] = new Keys[]
+                controls._keyAllocations[ControlTypes.CONSOLE] = new Keys[]
                 {
-                    Keys.Escape
+                    Keys.OemTilde
                 };
-                controls._keyAllocations[MENU_KEY] = new Keys[]
+
+                foreach (ControlTypes t in controls._keyAllocations.Keys)
                 {
-                    Keys.Escape
-                };
+                    controls._inputs[t] = new InputControl();
+                }
 
                 return null;
             }
@@ -91,15 +120,15 @@ namespace EquestriEngine.Data.Controls
 
         public void SaveControls(System.IO.BinaryWriter bw)
         {
-            bw.Write(true);
-            foreach (var kvp in _keyAllocations)
-            {
-                bw.Write(kvp.Key);
-                bw.Write(kvp.Value.Length);
-                for (int i = 0; i < kvp.Value.Length; i++)
-                    bw.Write((long)kvp.Value[i]);
-            }
-            bw.Write(false);
+            //bw.Write(true);
+            //foreach (var kvp in _keyAllocations)
+            //{
+            //    bw.Write(kvp.Key[0]);
+            //    bw.Write(kvp.Value.Length);
+            //    for (int i = 0; i < kvp.Value.Length; i++)
+            //        bw.Write((long)kvp.Value[i]);
+            //}
+            //bw.Write(false);
         }
 
         public static void LoadControls(out KeyboardControl k, System.IO.BinaryReader br)
@@ -108,47 +137,6 @@ namespace EquestriEngine.Data.Controls
             //bool working;
         }
 
-        public bool Input1()
-        {
-            bool val = false;
-            foreach (Keys k in _keyAllocations[INTERACTION_KEY])
-            {
-                if (ks.IsKeyDown(k)
-                    && pks.IsKeyUp(k))
-                    val = true;
-            }
-            return val;
-        }
-
-        public bool Input2()
-        {
-            return ks.IsKeyDown(_allocatedKeys[1])
-                && pks.IsKeyUp(_allocatedKeys[1]);
-        }
-
-        public bool Input3()
-        {
-            return ks.IsKeyDown(_allocatedKeys[2])
-                && pks.IsKeyUp(_allocatedKeys[2]);
-        }
-
-        public bool Input4()
-        {
-            return ks.IsKeyDown(_allocatedKeys[3])
-                && pks.IsKeyUp(_allocatedKeys[3]);
-        }
-
-        public bool Input5()
-        {
-            return ks.IsKeyDown(_allocatedKeys[4])
-                && pks.IsKeyUp(_allocatedKeys[4]);
-        }
-
-        public bool Input6()
-        {
-            return ks.IsKeyDown(_allocatedKeys[5])
-                && pks.IsKeyUp(_allocatedKeys[5]);
-        }
 #if DEBUG
 
         public bool ConsoleButton()
@@ -174,6 +162,11 @@ namespace EquestriEngine.Data.Controls
         {
             pks = ks;
             ks = Keyboard.GetState();
+
+            foreach (var kvp in _inputs)
+            {
+                kvp.Value.Value = ks.IsKeyDown(_keyAllocations[kvp.Key][0]) && pks.IsKeyUp(_keyAllocations[kvp.Key][0]);
+            }
             //Up Key
             if (ks.IsKeyDown(_allocatedKeys[6]))
                 _y = 1;

@@ -16,6 +16,11 @@ namespace EquestriEngine.Data.Controls
             get { return 0; }
         }
 
+        public InputControl this[ControlTypes i]
+        {
+            get { return null; }
+        }
+
         public bool Input1()
         {
             return ms.LeftButton == ButtonState.Pressed 

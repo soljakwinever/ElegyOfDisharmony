@@ -124,6 +124,16 @@ namespace EquestriEngine.Data.Scenes
             return _vector.ToString();
         }
 
+        public override bool Equals(object obj)
+        {
+ 	        return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _vector.GetHashCode();
+        }
+
         #endregion
 
         #region Static Methods

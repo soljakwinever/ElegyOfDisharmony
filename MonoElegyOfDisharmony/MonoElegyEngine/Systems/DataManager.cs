@@ -3,6 +3,7 @@ using Game = Microsoft.Xna.Framework.Game;
 using EquestriEngine.Data;
 using EquestriEngine.Data.Collections;
 using EquestriEngine.GameData.Collections;
+using System.Collections.Generic;
 
 namespace EquestriEngine.Systems
 {
@@ -23,11 +24,22 @@ namespace EquestriEngine.Systems
             PlayerGold,
             PlayerSteps;
 
+        Stack<Achievement> _achievementsToCreate;
+
+        private bool _dataChanged;
+
+        public bool DataChanged
+        {
+            get { return _dataChanged; }
+            set { _dataChanged = value; }
+        }
+
         public DataManager(Game game)
             : base(game)
         {
             _switches = new SwitchCollection();
             _variables = new VariableCollection();
+            _achievementsToCreate = new Stack<Achievement>();
 
             _switches["Achievement Test"] = new Switch()
             {
@@ -85,6 +97,7 @@ namespace EquestriEngine.Systems
                             ach.RegisterData(_variables[temp[1]]);
                             break;
                     }
+                    ach.OnAchievementUnlocked += DataChange;
                     ConsoleWindow.WriteLine("Successfully added Achievement - {0} - {1}", ach.Name, ach.Description);
                 }
                 catch
@@ -172,10 +185,26 @@ namespace EquestriEngine.Systems
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             _timePlayed += gameTime.ElapsedGameTime;
+
+
+            if (_achievementsToCreate.Count > 0)
+            {
+                var widget = new SystemWidgets.AchievementDisplay(4.0f,_achievementsToCreate.Peek());
+                EngineGlobals.GameReference.WidgetDrawer.AddWidget(widget);
+                _achievementsToCreate.Pop();
+            }
             base.Update(gameTime);
         }
 
-        public static string PrintSwitches(int page)
+        public void DataChange(object sender, Data.Inputs.Interfaces.IEventInput input)
+        {
+            if (sender is Achievement)
+            {
+                _achievementsToCreate.Push(sender as Achievement);
+            }
+        }
+
+        public string PrintSwitches(int page)
         {
             string temp = "--Switch List--\n";
             const string format = "Name({0}) - Value({1})\n";
@@ -187,7 +216,7 @@ namespace EquestriEngine.Systems
             return temp;
         }
 
-        public static string PrintVariables(int page)
+        public string PrintVariables(int page)
         {
             string temp = "--Variable List--\n";
             const string format = "Name({0}) - Value({1})\n";
@@ -199,7 +228,7 @@ namespace EquestriEngine.Systems
             return temp;
         }
 
-        public static Variable GetVariable(string name)
+        public Variable GetVariable(string name)
         {
             try
             {
@@ -212,17 +241,20 @@ namespace EquestriEngine.Systems
             return null;
         }
 
-        public static void SetVariable(string name, Variable value)
+        public void SetVariable(string name, Variable value)
         {
             if (_variables.ContainsKey(name))
             {
                 _variables[name] = value;
             }
             else
+            {
+                value.OnValueChange += DataChange;
                 _variables.Add(name, value);
+            }
         }
 
-        public static void TurnOnSwitch(string name)
+        public void TurnOnSwitch(string name)
         {
             if (!_switches.ContainsKey(name))
             {
@@ -233,7 +265,7 @@ namespace EquestriEngine.Systems
                 _switches[name].TurnOn();
         }
 
-        public static void TurnOffSwitch(string name)
+        public void TurnOffSwitch(string name)
         {
             if (!_switches.ContainsKey(name))
             {
@@ -244,7 +276,7 @@ namespace EquestriEngine.Systems
                 _switches[name].TurnOff();
         }
 
-        public static void ToggleSwitch(string name)
+        public void ToggleSwitch(string name)
         {
             if (!_switches.ContainsKey(name))
             {

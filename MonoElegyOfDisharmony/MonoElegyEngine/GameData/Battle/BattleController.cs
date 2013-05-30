@@ -70,7 +70,7 @@ namespace EquestriEngine.GameData.Battle
             _characters[0] = Player.CharacterData.Slow_Character;
             _characters[1] = Player.CharacterData.Fast_Character;
             _lastBattleDamage = new Variable(0);
-            Systems.DataManager.SetVariable("{lastdamage}", _lastBattleDamage);
+            EngineGlobals.DataManager.SetVariable("{lastdamage}", _lastBattleDamage);
             _selectAction = false;
         }
 
