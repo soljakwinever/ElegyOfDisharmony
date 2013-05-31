@@ -1,0 +1,1 @@
+Requires git of Monogame and Ligedren Network to compile
