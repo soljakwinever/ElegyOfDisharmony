@@ -3,10 +3,11 @@ using EquestriEngine.Data.UI;
 using EquestriEngine.Data.Inputs;
 using EquestriEngine.Objects.Graphics;
 using EquestriEngine.Objects.Graphics.Misc;
-using EquestriEngine.GameData.Battle;
 using EquestriEngine.Data.Controls;
 using EquestriEngine.Data.Collections;
 using EquestriEngine;
+
+using ElegyGame.GameData.Battle;
 
 namespace ElegyGame.Screens
 {
@@ -34,12 +35,7 @@ namespace ElegyGame.Screens
             _controller = new BattleController();
             _controller.OnActionPerform += _controller_OnActionPerform;
 
-            methodList = new MethodParamCollection();
-            methodList.AddMethod(new MethodParamPair(EngineGlobals.ShowMessageBox, new StringInput() { Input = "Rawr I'm a pony " }, 1));
-            methodList.AddMethod(new MethodParamPair(EngineGlobals.ShowMessageBox, new StringInput() { Input = "But I hate wednesday...\nI want to eat a female" }, 2));
-            methodList.AddMethod(new MethodParamPair(EngineGlobals.Wait, new IntInput() { Input = 1000 }, 3));
-            methodList.AddMethod(new MethodParamPair(EngineGlobals.ShowMessageBox, new StringInput() { Input = "But I digress, I hate everyone" }, 4));
-            methodList.AddMethod(new MethodParamPair(EngineGlobals.AdjustGold, new IntInput() { Input = 1000 }, -1));
+            MethodParamCollection.LoadScriptFromFile(out methodList, "test.ell");
         }
 
         public override void Initialize()
@@ -96,13 +92,13 @@ namespace ElegyGame.Screens
 
         public override void HandleInput(float dt)
         {
-            //if (ControlReference.Input1())
-            //{
-            //    if (_controller.SelectAction)
-            //    {
-            //        _controller.SelectAction = false;
-            //    }
-            //}
+            if (ControlReference[ControlTypes.Interaction].Value)
+            {
+                if (_controller.SelectAction)
+                {
+                    _controller.SelectAction = false;
+                }
+            }
             if (ControlReference[ControlTypes.Jump].Value)
             {
                 methodList.ExecuteFromStart(null);

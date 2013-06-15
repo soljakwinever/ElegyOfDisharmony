@@ -1,4 +1,4 @@
-﻿using EquestriEngine.GameData.Battle;
+﻿using ElegyGame.GameData.Battle;
 
 namespace ElegyGame.GameData.Skills
 {

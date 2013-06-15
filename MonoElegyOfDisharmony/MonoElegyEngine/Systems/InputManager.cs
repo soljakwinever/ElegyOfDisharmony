@@ -10,6 +10,12 @@ namespace EquestriEngine.Systems
         private static bool _recievingRawInput;
         private static Data.Variable _variable;
 
+#if WINDOWS
+
+        private static MouseControl _mouseInput;
+
+#endif
+
         public static bool RecievingRawInput
         {
             get { return _recievingRawInput; }
@@ -24,6 +30,13 @@ namespace EquestriEngine.Systems
         public override void Initialize()
         {
             _controls = new KeyboardControl();
+
+#if WINDOWS
+
+            _mouseInput = new MouseControl();
+
+#endif
+
             base.Initialize();
         }
 
@@ -39,6 +52,18 @@ namespace EquestriEngine.Systems
                 ConsoleWindow.ChangeMode();
             }
 #endif
+
+            if (_recievingRawInput)
+            {
+                System.Windows.Forms.Application.DoEvents();
+            }
+
+#if WINDOWS
+
+            _mouseInput.Update();
+
+#endif
+
             _controls.Update();
             base.Update(gameTime);
         }
@@ -58,6 +83,15 @@ namespace EquestriEngine.Systems
             KeyGrabber.UnregisterMessageFilter();
             _recievingRawInput = false;
         }
+
+#if WINDOWS
+
+        public static void RegisterMouseInput(MenuData.Controllers.MenuController menu)
+        {
+
+        }
+
+#endif
 
         /*public static void RegisterPlayerNode(Objects.GameObjects.Player player)
         {
@@ -82,7 +116,7 @@ namespace EquestriEngine.Systems
                     method.ExecuteMethod(null);
                     ConsoleWindow.WriteLine("Executing...");
                 }
-                catch(Data.Exceptions.EngineException ex)
+                catch(EngineException ex)
                 {
                     ConsoleWindow.WriteLine("Warning: {0}", ex.Message);
                 }

@@ -51,6 +51,8 @@ namespace EquestriEngine.SystemScreens
 
         public override void Initialize()
         {
+            nextScreen.StateManager = StateManager;
+            nextScreen.Initialize();
             _loadMethod.BeginInvoke(new System.AsyncCallback(FinishedLoading), null);
         }
 

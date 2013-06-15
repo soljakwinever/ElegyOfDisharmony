@@ -190,7 +190,7 @@ namespace EquestriEngine.Systems
                     else if (kvp.Value is Objects.Graphics.Interfaces.IContentLoadableEffect)
                         result = (kvp.Value as Objects.Graphics.Interfaces.IContentLoadableEffect).InitEffect(_content);
                     else
-                        throw new Data.Exceptions.EngineException("Effect not loadable", true);
+                        throw new EngineException("Effect not loadable", true);
                 }
                 if (!result)
                     Systems.ConsoleWindow.WriteLine("Error loading effect " + kvp.Value);
@@ -286,7 +286,7 @@ namespace EquestriEngine.Systems
         public TextureCollection LoadFromLoadList(Objects.Graphics.Misc.TextureLoadList list)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             TextureCollection collection = new TextureCollection();
             foreach (var kvp in list.Entries)
             {
@@ -316,7 +316,7 @@ namespace EquestriEngine.Systems
         public FontObject CreateFontFromFile(string name, string fileName)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             if (_fonts.ContainsKey(name))
                 return _fonts[name];
             else
@@ -344,7 +344,7 @@ namespace EquestriEngine.Systems
         public TextureObject CreateTextureObjectFromFile(string name, string file)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             if (!_textures.ContainsKey(name))
             {
                 TextureObject newTexture = new TextureObject(name, file);
@@ -361,7 +361,7 @@ namespace EquestriEngine.Systems
         public TextureObject CreateTextureObjectFromTarget(string name, Microsoft.Xna.Framework.Graphics.RenderTarget2D target)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             if (!_textures.ContainsKey(name))
             {
                 TextureObject newTexture = new TextureObject(name, target,true);
@@ -377,7 +377,7 @@ namespace EquestriEngine.Systems
         public TextureObject CreateTextureObjectFromTarget(string name, TargetObject target)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             if (!_textures.ContainsKey(name))
             {
                 TextureObject newTexture = new TextureObject(name, target.Texture);
@@ -393,7 +393,7 @@ namespace EquestriEngine.Systems
         public TargetObject CreateTargetObject(string name, int width, int height)
         {
             if (!_systemReady)
-                throw new Data.Exceptions.EngineException("System not ready for creation", true);
+                throw new EngineException("System not ready for creation", true);
             if (!_textures.ContainsKey(name))
             {
                 TargetObject newTarget = new TargetObject(name, GraphicsDevice, width, height);
@@ -448,7 +448,7 @@ namespace EquestriEngine.Systems
             }
             catch
             {
-                throw new Data.Exceptions.EngineException("No such font exists " + fontObject, true);
+                throw new EngineException("No such font exists " + fontObject, true);
             }
             return temp;
         }

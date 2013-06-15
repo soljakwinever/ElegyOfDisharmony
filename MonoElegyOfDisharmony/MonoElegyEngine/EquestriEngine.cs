@@ -18,6 +18,7 @@ namespace EquestriEngine
 
         public const string VERSION_NUMBER = "1.0.0.0";
 
+        protected AudioManager _audioManager = null;
         protected AssetManager _assetManager = null;
         protected DataManager _dataManager = null;
         protected InputManager _inputManager = null;
@@ -41,6 +42,12 @@ namespace EquestriEngine
             NonDepthState;
 
         static bool _errorOccured;
+
+        public AudioManager AudioManager
+        {
+            get { return _audioManager; }
+            set { _audioManager = value; }
+        }
 
         public AssetManager AssetManager
         {
@@ -78,6 +85,11 @@ namespace EquestriEngine
             get { return new Viewport(0, 0, _settings.WindowWidth, _settings.WindowHeight); }
         }
 
+        public Equestribatch SpriteBatch
+        {
+            get { return spriteBatch; }
+        }
+
         //public EquestriSkeleBatch SkeleBatch
         //{
         //    get { return _skelebatch; }
@@ -107,7 +119,6 @@ namespace EquestriEngine
             EngineGlobals.GameReference = this;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8;
-
 #if RUN_FAST
             graphics.SynchronizeWithVerticalRetrace = false;
             this.IsFixedTimeStep = false;
@@ -115,6 +126,7 @@ namespace EquestriEngine
             _settings = GameSettings.LoadData();
             _settings.InitGraphicsDevice(graphics, GraphicsDevice);
 
+            _audioManager = new Systems.AudioManager(this);
             _assetManager = new AssetManager(this);
             _dataManager = new DataManager(this);
             _inputManager = new InputManager(this);
@@ -124,6 +136,7 @@ namespace EquestriEngine
             this.Components.Add(_assetManager);
             this.Components.Add(_dataManager);
             this.Components.Add(_inputManager);
+            this.Components.Add(_audioManager);
             this.Components.Add(_stateManager);
             this.Components.Add(_widgetDisplay);
 #if PROFILER
@@ -138,9 +151,14 @@ namespace EquestriEngine
             Content.RootDirectory = "Content";
 
             this.Window.Title = string.Format("{0} - ver {1}", title, VERSION_NUMBER);
+            QueryBatteryLevel();
         }
 
-
+        private void QueryBatteryLevel()
+        {
+            float powerLevel = System.Windows.Forms.SystemInformation.PowerStatus.BatteryLifePercent;
+            int breakpoint = 0;
+        }
 
         protected override void Initialize()
         {

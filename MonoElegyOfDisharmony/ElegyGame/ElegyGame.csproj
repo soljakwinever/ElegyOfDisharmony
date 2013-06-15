@@ -63,10 +63,13 @@
     <Compile Include="GameData\Battle\Enemy\MobData.cs" />
     <Compile Include="GameData\Battle\Player\CharacterData.cs" />
     <Compile Include="GameData\Collections\BattleDataCollection.cs" />
+    <Compile Include="GameData\Inputs\BattleInput.cs" />
     <Compile Include="GameData\Item\Equippable\Costume.cs" />
     <Compile Include="GameData\Item\Equippable\Weapon.cs" />
+    <Compile Include="GameData\Item\Inventory.cs" />
     <Compile Include="GameData\Item\ItemData.cs" />
     <Compile Include="GameData\Map\Character\Character.cs" />
+    <Compile Include="GameData\Map\Character\Enemy\Enemy.cs" />
     <Compile Include="GameData\Skills\Skill.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +98,7 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="GameData\Item\Usable\" />
+    <Folder Include="GameData\Map\Map\" />
     <Folder Include="Widgets\" />
   </ItemGroup>
   <ItemGroup>

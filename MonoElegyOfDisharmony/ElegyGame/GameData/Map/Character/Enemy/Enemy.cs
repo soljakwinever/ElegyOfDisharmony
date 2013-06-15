@@ -12,5 +12,9 @@ namespace ElegyGame.GameData.Map.Character.Enemy
     /// </summary>
     public class Enemy : Character
     {
+        public override void Update(float dt)
+        {
+
+        }
     }
 }

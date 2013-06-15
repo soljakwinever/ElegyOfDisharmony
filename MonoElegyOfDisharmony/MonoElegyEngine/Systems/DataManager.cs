@@ -2,7 +2,6 @@
 using Game = Microsoft.Xna.Framework.Game;
 using EquestriEngine.Data;
 using EquestriEngine.Data.Collections;
-using EquestriEngine.GameData.Collections;
 using System.Collections.Generic;
 
 namespace EquestriEngine.Systems
@@ -15,9 +14,6 @@ namespace EquestriEngine.Systems
         private static VariableCollection _variables = null;
         private static System.TimeSpan _timePlayed;
         Achievement[] achievements;
-        private static BattleDataCollection _playerParty;
-        private static BattleDataCollection _playerCharacters;
-        private static BattleDataCollection _enemyCollection;
 
         static Variable
             PlayerName,
@@ -49,10 +45,6 @@ namespace EquestriEngine.Systems
             {
                 Name = "Multi Switch Check Test"
             };
-
-            _playerParty = new BattleDataCollection();
-            _playerCharacters = new BattleDataCollection();
-            _enemyCollection = new BattleDataCollection();
 
             _switches["Achievement Test"].TurnOn();
             PlayerName = new Variable("Pinkie Pie");

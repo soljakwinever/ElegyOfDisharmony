@@ -44,7 +44,7 @@ namespace EquestriEngine.Objects.Graphics.Misc
                 {
                     formatFile.ReadBegin(@"Data\LoadLists\" + file + LOAD_EXTENSION);
                     if (formatFile.ReadBlock() != "LoadList")
-                        throw new Data.Exceptions.EngineException("Missing correct block header, should be \"LoadList\"", true);
+                        throw new EngineException("Missing correct block header, should be \"LoadList\"", true);
                     int entries = int.Parse(formatFile.ReadLine());
                     for (int i = 0; i < entries; i++)
                     {
@@ -71,7 +71,7 @@ namespace EquestriEngine.Objects.Graphics.Misc
                                         formatFile.ReadEndBlock();
                                         var temp = raw.Split(',');
                                         if (temp.Length != 4)
-                                            throw new Data.Exceptions.EngineException("Invalid atlas entry", true);
+                                            throw new EngineException("Invalid atlas entry", true);
                                         x = int.Parse(temp[0]);
                                         y = int.Parse(temp[1]);
                                         w = int.Parse(temp[2]);

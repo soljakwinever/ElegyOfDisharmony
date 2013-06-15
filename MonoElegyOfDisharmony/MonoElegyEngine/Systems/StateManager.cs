@@ -81,18 +81,24 @@ namespace EquestriEngine.Systems
         public void AddScreenLoad(Data.UI.DrawableGameScreen screen)
         {
             var loadScreen = new SystemScreens.LoadingScreen(screen.LoadContent, screen);
-            loadScreen.LoadContent();
             AddScreen(loadScreen, true);
+            loadScreen.Initialize();
+            loadScreen.LoadContent();
         }
 
         public void AddScreen(Data.UI.Interfaces.IGameScreen screen, bool loaded = false)
         {
             screen.StateManager = this;
+
+            if(!loaded)
+                screen.Initialize();
             if (screen is IDrawable)
             {
                 var dScreen = screen as IDrawable;
                 if (!loaded)
+                {
                     dScreen.LoadContent();
+                }
                 if (dScreen.CoversOthers)
                 {
                     foreach (IDrawable oScreen in _gameScreens)
@@ -116,7 +122,6 @@ namespace EquestriEngine.Systems
                 iScreen.HasFocus = true;
             }
 
-            screen.Initialize();
             if (_gameScreens.Count > 0 && _gameScreens.Last.Value is SystemScreens.LoadingScreen)
                 _gameScreens.AddBefore(_gameScreens.Last, screen);
             else

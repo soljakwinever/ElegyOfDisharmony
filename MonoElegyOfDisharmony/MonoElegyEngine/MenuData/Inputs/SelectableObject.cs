@@ -8,16 +8,58 @@ namespace EquestriEngine.MenuData.Inputs
 {
     public delegate void SelectAction(object sender, SelectItemArgs e);
 
-    public class SelectableObject : MenuObject
+    public abstract class SelectableObject : MenuObject
     {
-        public override void Update(float dt)
+        private bool 
+            _enabled,
+            _hover,
+            _selected;
+
+        public bool Enabled
         {
-            throw new NotImplementedException();
+            get { return _enabled; }
+            set { _enabled = value; }
         }
 
-        public override void Draw(float dt)
+        /// <summary>
+        /// Is the control currently being hovered over
+        /// </summary>
+        public bool IsHovered
         {
-            throw new NotImplementedException();
+            get { return _hover; }
+            set 
+            { 
+                _hover = value;
+                if (value)
+                {
+                    if (OnHover != null)
+                        OnHover(this.OnHover, new SelectItemArgs() { Hovering = _hover, Selected = _selected });
+                }
+                else
+                {
+                    if (OnEndHover != null)
+                        OnEndHover(this.OnHover, new SelectItemArgs() { Hovering = _hover, Selected = _selected });
+                }
+            }
         }
+
+        public bool Selected
+        {
+            get { return _selected; }
+            set
+            {
+                if (value && _selected != value)
+                {
+                    if(OnSelected != null)
+                        OnSelected(this, new SelectItemArgs() { Hovering = IsHovered, Selected = value });
+                }
+                _selected = value;
+            }
+        }
+
+        public event SelectAction 
+            OnSelected,
+            OnHover,
+            OnEndHover;
     }
 }

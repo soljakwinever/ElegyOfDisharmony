@@ -5,6 +5,7 @@ namespace EquestriEngine.Objects.Graphics
 {
     public abstract class EffectObject
     {
+        private GraphicsDevice _device;
         protected Effect _effect;
         protected SamplerState _samplerstate;
 
@@ -26,6 +27,18 @@ namespace EquestriEngine.Objects.Graphics
         protected EffectObject(string technique)
         {
             _TechniqueName = technique;
+        }
+
+
+        public virtual void Load(GraphicsDevice device)
+        {
+            _device = device;
+            _ready = true;
+        }
+
+        public void ApplyEffect()
+        {
+
         }
 
         public static implicit operator Effect(EffectObject o)

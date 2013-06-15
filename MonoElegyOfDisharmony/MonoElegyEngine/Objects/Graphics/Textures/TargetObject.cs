@@ -73,7 +73,7 @@ namespace EquestriEngine.Objects.Graphics
         public void BeginTarget()
         {
             if (_inUse)
-                throw new Data.Exceptions.EngineException("Target already in use! End the target before calling begin",true);
+                throw new EngineException("Target already in use! End the target before calling begin",true);
             try
             {
                 devRef.SetRenderTarget(_texture as RenderTarget2D);
@@ -114,7 +114,7 @@ namespace EquestriEngine.Objects.Graphics
         public void EndTarget()
         {
             if (!_inUse)
-                throw new Data.Exceptions.EngineException("The target has not been started, run Begin in order to use it", true);
+                throw new EngineException("The target has not been started, run Begin in order to use it", true);
             devRef.SetRenderTarget(null);
             _inUse = false;
         }

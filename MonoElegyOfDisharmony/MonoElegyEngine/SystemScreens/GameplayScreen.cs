@@ -4,8 +4,15 @@ using EquestriEngine.Data.Scenes;
 
 namespace EquestriEngine.SystemScreens
 {
-    public class GameplayScreen : DrawableGameScreen
+    public abstract class GameplayScreen : DrawableGameScreen, Data.UI.Interfaces.IInputReciever
     {
+        private bool _hasFocus;
+
+        public bool HasFocus
+        {
+            get { return _hasFocus; }
+            set { _hasFocus = value; }
+        }
 
         public GameplayScreen()
             : base(false)
@@ -13,34 +20,6 @@ namespace EquestriEngine.SystemScreens
 
         }
 
-        public override void Initialize()
-        {
-            base.Initialize();
-        }
-
-        public override void LoadContent()
-        {
-            //eo = EquestrEngine.AssetManager.GetEffect("{basic_effect}") as BasicEffectObject;
-            System.Threading.Thread.Sleep(10000);
-        }
-
-        public override void UnloadContent()
-        {
-
-        }
-
-        public override void Update(float dt)
-        {
-            //Systems.ConsoleWindow.WriteLine("Updating Gameplay Screen");
-        }
-
-        public override void HandleInput(float dt)
-        {
-            base.HandleInput(dt);
-        }
-
-        public override void Draw(float dt)
-        {
-        }
+        public abstract void HandleInput(float dt);
     }
 }

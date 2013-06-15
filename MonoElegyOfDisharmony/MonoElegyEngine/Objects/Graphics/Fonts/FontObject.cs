@@ -22,7 +22,7 @@ namespace EquestriEngine.Objects.Graphics
                 if (_ready)
                     return _font;
                 else
-                    throw new Data.Exceptions.EngineException("Font has not been loaded", false);
+                    throw new EngineException("Font has not been loaded", false);
             }
         }
 

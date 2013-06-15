@@ -1,6 +1,6 @@
 ﻿using Exception = System.Exception;
 
-namespace EquestriEngine.Data.Exceptions
+namespace EquestriEngine
 {
     public class EngineException : Exception
     {

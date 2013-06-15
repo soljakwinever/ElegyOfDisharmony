@@ -5,21 +5,13 @@ namespace EquestriEngine.Data.Collections
 {
     public class MethodParamCollection
     {
-        private List<MethodParamPair> _methods;
+        private MethodParamPair[] _methods;
         //Requires the players input to continue
-        private bool requiresInput;
 
         private int _next;
 
-        public bool RequireInput
-        {
-            get { return requiresInput; }
-            set { requiresInput = value; }
-        }
-
         public MethodParamCollection()
         {
-            _methods = new List<MethodParamPair>();
             _next = 0;
         }
 
@@ -44,7 +36,50 @@ namespace EquestriEngine.Data.Collections
         public void AddMethod(MethodParamPair method)
         {
             method.PostExecuteHandler += MethodExecuted;
-            _methods.Add(method);
+        }
+
+        public static void LoadScriptFromFile(out MethodParamCollection script, string fileName)
+        {
+            script = new MethodParamCollection();
+            using (Utilities.FormattedFile file = new Utilities.FormattedFile())
+            {
+                file.ReadBegin(fileName);
+
+                if (file.ReadBlock() == "Script")
+                {
+                    int count = -1;
+                    count = int.Parse(file.ReadLine());
+
+                    script._methods = new MethodParamPair[count];
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        MethodParamPair method;
+                        string methodName = file.ReadBlock();
+                        int paramNum = int.Parse(file.ReadLine());
+                        string[] tempParams = new string[paramNum];
+                        for (int j = 0; j < paramNum; j++)
+                        {
+                            tempParams[j] = file.ReadLine();
+                        }
+                        int exitNum = int.Parse(file.ReadLine());
+                        string[] tempExits = new string[exitNum];
+                        for (int j = 0; j < exitNum; j++)
+                        {
+                            tempExits[j] = file.ReadLine();
+                        }
+                        file.ReadEndBlock();
+                        method = EngineGlobals.GenerateMethodFromArgs(methodName, tempParams, tempExits);
+                        method.PostExecuteHandler += script.MethodExecuted;
+                        script._methods[i] = method;
+
+                    }
+                    file.ReadEndBlock();
+                    file.ReadEnd();
+                }
+                else
+                    throw new EngineException("Could not load script " + fileName, false);
+            }
         }
     }
 }

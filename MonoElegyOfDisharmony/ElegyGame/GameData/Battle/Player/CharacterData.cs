@@ -21,15 +21,12 @@ namespace ElegyGame.GameData.Battle.Player
             : base()
         {
             _harmonyBurst = 0;
-            _inventory = new Dictionary<Item.ItemData, int>();
         }
 
         public override string ToString()
         {
             return Name;
         }
-
-        public void AddItem(
 
         public static CharacterData Fast_Character
         {

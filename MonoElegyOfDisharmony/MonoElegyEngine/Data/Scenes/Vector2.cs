@@ -128,6 +128,16 @@ namespace EquestriEngine.Data.Scenes
             return Vector.DistanceSquared(v1, v2);
         }
 
+        public static Vector2 Transform(Vector2 vector, Matrix transform)
+        {
+            return new Vector2(Vector.Transform(vector, transform));
+        }
+
+        public static Vector2 TransformNormal(Vector2 vector, Matrix transform)
+        {
+            return new Vector2(Vector.TransformNormal(vector, transform));
+        }
+
         #endregion
 
         #region Operators

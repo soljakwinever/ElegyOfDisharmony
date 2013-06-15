@@ -99,7 +99,7 @@ namespace ElegyGame.GameData.Battle
                 if (delay > 1)
                 {
                     _selectAction = true;
-                    //Systems.ConsoleWindow.WriteLine(string.Format("{0} is now battling", Current_Actor.Name));
+                    //ElegyOfDisharmonyGlobals.GameReference.ConsoleWindow.WriteLine(string.Format("{0} is now battling", Current_Actor.Name));
                     delay = 0;
                 }
             }

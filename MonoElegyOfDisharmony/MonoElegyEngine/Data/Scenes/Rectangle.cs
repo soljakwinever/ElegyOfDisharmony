@@ -64,6 +64,11 @@ namespace EquestriEngine.Data.Scenes
             _rectangle = r;
         }
 
+        public bool Intersects(Rectangle r)
+        {
+            return this._rectangle.Intersects(r);
+        }
+
         public static implicit operator Rectangle(Rect r)
         {
             return new Rectangle(r);

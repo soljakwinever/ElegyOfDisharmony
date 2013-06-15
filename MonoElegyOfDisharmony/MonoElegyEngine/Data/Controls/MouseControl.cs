@@ -8,12 +8,12 @@ namespace EquestriEngine.Data.Controls
 
         public float X
         {
-            get { return 0; }
+            get { return ms.X; }
         }
 
         public float Y
         {
-            get { return 0; }
+            get { return ms.Y; }
         }
 
         public InputControl this[ControlTypes i]

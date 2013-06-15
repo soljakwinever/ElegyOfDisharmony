@@ -2,6 +2,7 @@
 using EquestriEngine.Data.Inputs.Interfaces;
 using EquestriEngine.Data.Inputs;
 using EquestriEngine.Data.Collections;
+
 //using EquestriEngine.Objects.Nodes;
 using EquestriEngine.Systems;
 using Helper = Microsoft.Xna.Framework.MathHelper;
@@ -46,12 +47,22 @@ namespace EquestriEngine
         {
             IntInput IInput = (IntInput)input;
 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(IInput.Input);
 
             return MethodResult.Success;
         }
 
         #region Switches And Variables
+
+        public static MethodResult CreateVariable(object sender, IEventInput input)
+        {
+            var vInput = (CreateVariableInput)input;
+
+            Variable newVar = new Variable(vInput.Value);
+
+            DataManager.SetVariable(vInput.Name, newVar);
+            return MethodResult.Success;
+        }
 
         public static MethodResult ToggleSwitch(object sender, IEventInput input)
         {
@@ -279,6 +290,66 @@ namespace EquestriEngine
 
         #region Methods
 
+        public static Data.Inputs.MethodParamPair GenerateMethodFromArgs(string method, string[] param, string[] paths)
+        {
+            MethodParamPair output = null;
+
+            ExitPathGroup methodPaths = new ExitPathGroup();
+            for (int i = 0; i < paths.Length; i++)
+            {
+                var temp = paths[i].Split(';');
+                if (temp.Length != 2)
+                    throw new EngineException("Invalid path size",true);
+                int rawResult = int.Parse(temp[i]), nextMethod;
+                MethodResult result = (MethodResult)rawResult;
+                nextMethod = int.Parse(temp[1]);
+                methodPaths[result] = nextMethod;
+            }
+            switch (method.ToLower())
+            {
+                case "addgold":
+                    {
+                        break;
+                    }
+                case "conditional":
+                    {
+                        ConditionInput conditionInput = new ConditionInput();
+                        break;
+                    }
+                case "addexp":
+                    { 
+                        break;
+                    }
+                case "toggleswitch":
+                    {
+                        break;
+                    }
+                case "activateswitch":
+                    {
+                        break;
+                    }
+                case "deactivateswitch":
+                    {
+                        break;
+                    }
+                case "showmessagebox":
+                    {
+                        string messageBoxInput = "";
+                        for (int i = 0; i < param.Length; i++)
+                        {
+                            messageBoxInput += param[i] + "\n";
+                        }
+                        StringInput methodInput = new StringInput() { Input = messageBoxInput };
+
+                        output = new MethodParamPair(ShowMessageBox, methodInput, methodPaths);
+                        break;
+                    }
+                default:
+                    throw new EngineException("Method name Not Found", false);
+            }
+            return output;
+        }
+
         public static Data.Inputs.MethodParamPair GenerateMethodFromString(string input)
         {
             Data.Inputs.MethodParamPair output = null;
@@ -289,7 +360,7 @@ namespace EquestriEngine
                 case "addgold":
                     {
                         if (temp.Length != 2)
-                            throw new Data.Exceptions.EngineException("Incorrect number of parameters passed", false);
+                            throw new EngineException("Incorrect number of parameters passed", false);
                         try
                         {
                             MethodParamResult method = AdjustGold;
@@ -314,7 +385,7 @@ namespace EquestriEngine
                 case "toggleswitch":
                     {
                         if (temp.Length != 2)
-                            throw new Data.Exceptions.EngineException("Incorrect number of parameters passed", false);
+                            throw new EngineException("Incorrect number of parameters passed", false);
                         MethodParamResult method = ToggleSwitch;
                         StringInput parameter = new StringInput();
                         parameter.Input = temp[1];
@@ -324,18 +395,18 @@ namespace EquestriEngine
                 case "activateswitch":
                     {
                         if (temp.Length != 2)
-                            throw new Data.Exceptions.EngineException("Incorrect number of parameters passed", false);
+                            throw new EngineException("Incorrect number of parameters passed", false);
                         break;
                     }
                 case "deactivateswitch":
                     {
                         if (temp.Length != 2)
-                            throw new Data.Exceptions.EngineException("Incorrect number of parameters passed", false);
+                            throw new EngineException("Incorrect number of parameters passed", false);
 
                         break;
                     }
                 default:
-                    throw new Data.Exceptions.EngineException("Method name Not Found", false);
+                    throw new EngineException("Method name Not Found", false);
             }
             return output;
         }
@@ -384,6 +455,11 @@ namespace EquestriEngine
             return Helper.Distance(v1, v2);
         }
 
+        public static float Lerp(float v1, float v2, float amount)
+        {
+            return Helper.Lerp(v1, v2, amount);
+        }
+
         public static float Slerp(float v1, float v2, float amount)
         {
             return Helper.SmoothStep(v1, v2, amount);
@@ -392,22 +468,6 @@ namespace EquestriEngine
         public static float ToRadians(float degrees)
         {
             return degrees * (Pi / 180);
-        }
-    }
-
-    public class Equestribatch : Microsoft.Xna.Framework.Graphics.SpriteBatch
-    {
-        private bool _ready;
-
-        public bool Ready
-        {
-            get { return _ready; }
-        }
-
-        public Equestribatch(Microsoft.Xna.Framework.Graphics.GraphicsDevice device)
-            : base(device)
-        {
-            _ready = true;
         }
     }
 

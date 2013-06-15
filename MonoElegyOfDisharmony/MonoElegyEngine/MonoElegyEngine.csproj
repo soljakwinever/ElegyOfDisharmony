@@ -18,7 +18,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;RUN_FAST</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;WINDOWS,RUN_FAST</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +46,7 @@
     <Compile Include="Data\Collections\ActionList.cs" />
     <Compile Include="Data\Collections\GameScreenCollection.cs" />
     <Compile Include="Data\Collections\MethodParamCollection.cs" />
+    <Compile Include="Data\Collections\MethodResultCollection.cs" />
     <Compile Include="Data\Collections\SwitchCollection.cs" />
     <Compile Include="Data\Collections\VariableCollection.cs" />
     <Compile Include="Data\Collections\WidgetList.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Data\Inputs\AudioInput.cs" />
     <Compile Include="Data\Inputs\ConditionInput.cs" />
     <Compile Include="Data\Inputs\ControlInput.cs" />
+    <Compile Include="Data\Inputs\CreateVariableInput.cs" />
     <Compile Include="Data\Inputs\DataInput.cs" />
     <Compile Include="Data\Inputs\Interfaces\IEventInput.cs" />
     <Compile Include="Data\Inputs\IntInput.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Data\Scenes\BoundingBox.cs" />
     <Compile Include="Data\Scenes\BoundingSphere.cs" />
     <Compile Include="Data\Scenes\Color.cs" />
+    <Compile Include="Data\Scenes\Vector4.cs" />
     <Compile Include="Data\Scenes\Matrix.cs" />
     <Compile Include="Data\Scenes\Quaterion.cs" />
     <Compile Include="Data\Scenes\Rectangle.cs" />
@@ -87,26 +90,21 @@
     <Compile Include="Data\UI\Widget.cs" />
     <Compile Include="Data\Variable.cs" />
     <Compile Include="EngineGlobals.cs" />
+    <Compile Include="Equestribatch.cs" />
     <Compile Include="EquestriEngine.cs" />
-    <Compile Include="GameData\Battle\ActionArgs.cs" />
-    <Compile Include="GameData\Battle\BattleController.cs" />
-    <Compile Include="GameData\Battle\BattleData.cs" />
-    <Compile Include="GameData\Battle\Enemy\MobData.cs" />
-    <Compile Include="GameData\Battle\Player\CharacterData.cs" />
-    <Compile Include="GameData\Collections\BattleDataCollection.cs" />
-    <Compile Include="GameData\Item\Equippable\Costume.cs" />
-    <Compile Include="GameData\Item\Equippable\Weapon.cs" />
-    <Compile Include="GameData\Item\ItemData.cs" />
-    <Compile Include="GameData\Map\Character\Character.cs" />
-    <Compile Include="GameData\Skills\Skill.cs" />
     <Compile Include="Helpers\FormattedFile.cs" />
     <Compile Include="Helpers\KeyGrabber.cs" />
+    <Compile Include="MenuData\Controllers\MenuController.cs" />
+    <Compile Include="MenuData\Inputs\Button.cs" />
+    <Compile Include="MenuData\Inputs\Interfaces\IControlSelectable.cs" />
     <Compile Include="MenuData\Inputs\Interfaces\IMouseSelectable.cs" />
     <Compile Include="MenuData\Inputs\SelectableObject.cs" />
     <Compile Include="MenuData\Inputs\SelectItemArgs.cs" />
     <Compile Include="MenuData\MenuObject.cs" />
     <Compile Include="MenuData\Static\Label.cs" />
     <Compile Include="Objects\Content\ExclusiveContentManager.cs" />
+    <Compile Include="Objects\Drawing\DrawableSprite.cs" />
+    <Compile Include="Objects\Graphics\Effects\NormalMap2D.cs" />
     <Compile Include="Objects\Graphics\Effects\BasicEffectObject.cs" />
     <Compile Include="Objects\Graphics\Effects\EffectCollection.cs" />
     <Compile Include="Objects\Graphics\Effects\EffectObject.cs" />
@@ -138,6 +136,7 @@
     <Compile Include="SystemScreens\MessageBoxScreen.cs" />
     <Compile Include="SystemScreens\SetupScreen.cs" />
     <Compile Include="Systems\AssetManager.cs" />
+    <Compile Include="Systems\AudioManager.cs" />
     <Compile Include="Systems\Bases\BaseDrawableSystem.cs" />
     <Compile Include="Systems\Bases\BaseSystem.cs" />
     <Compile Include="Systems\ConsoleWindow.cs" />
@@ -151,8 +150,7 @@
     <Compile Include="SystemWidgets\PopTextWidget.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Audio\" />
-    <Folder Include="GameData\Item\Usable\" />
+    <Folder Include="Data\Audio\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Data\achievements.png" />

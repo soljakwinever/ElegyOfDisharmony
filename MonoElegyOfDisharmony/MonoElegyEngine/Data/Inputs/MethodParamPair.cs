@@ -6,7 +6,7 @@ namespace EquestriEngine.Data.Inputs
     public enum MethodResult
     {
         None = 0,
-        Success,
+        Success = 10,
         Fail = -1,
         True = 3,
         False = 4,
@@ -59,7 +59,7 @@ namespace EquestriEngine.Data.Inputs
         public MethodParamPair(
     MethodParamResult method,
     Interfaces.IEventInput input,
-            Dictionary<MethodResult, int> _paths)
+            Collections.ExitPathGroup _paths)
         {
             _result = MethodResult.None;
             _method = method;

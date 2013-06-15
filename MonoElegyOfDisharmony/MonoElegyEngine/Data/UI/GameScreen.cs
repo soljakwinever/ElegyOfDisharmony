@@ -57,7 +57,7 @@
         public virtual void Initialize()
         {
             if (_stateManager == null)
-                throw new Data.Exceptions.EngineException("Screen does not have a valid State Manager",true);
+                throw new EngineException("Screen does not have a valid State Manager",true);
         }
 
         public abstract void Update(float dt);

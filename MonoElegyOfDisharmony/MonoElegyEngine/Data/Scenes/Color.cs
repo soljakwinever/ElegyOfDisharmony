@@ -103,6 +103,21 @@ namespace EquestriEngine.Data.Scenes
             get { return ColorRGBA.Green; }
         }
 
+        public static Color Navy
+        {
+            get { return ColorRGBA.Navy; }
+        }
+
+        public static Color LightGoldenrodYellow
+        {
+            get { return ColorRGBA.LightGoldenrodYellow; }
+        }
+
+        public static Color DarkOrange
+        {
+            get { return ColorRGBA.DarkOrange; }
+        }
+
         public static Color SkyBlue
         {
             get { return ColorRGBA.SkyBlue; }
